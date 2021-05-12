@@ -30,11 +30,13 @@ public class WeatherClothesPage extends AppCompatActivity{
     TextView V_txtOuter2;
     TextView V_txtBottom1;
     TextView V_txtBottom2;
+    // 조언문구
+    TextView V_advice;
 
 
-    // 이미지 번호
+    // 옷 이미지 번호
     int a = R.drawable.cardigan1_1600; // 가디건
-    int b = R.drawable.longsleeve_1600; // 긴팔
+    int b = R.drawable.mantoman_1600; // 맨투맨
     int c = R.drawable.jacket_1600; // 자켓
     int d = R.drawable.cottonpants_1600; //면바지
     int e = R.drawable.tranchcoat_1600; // 트랜치 코트
@@ -45,14 +47,17 @@ public class WeatherClothesPage extends AppCompatActivity{
     int j = R.drawable.my_1600; // 마이
     int k = R.drawable.hoodshurt_1600; // 후드티
     int l = R.drawable.longsleeveshirt1600; // 긴팔 셔츠
-    int m = R.drawable.thickjacket_1600; // 두꺼운 자켓
+    int m = R.drawable.thickcardigan1600; // 두꺼운 가디건
     int n = R.drawable.padding_1600; // 패딩
+    int o = R.drawable.long_sleeve_1600; // 긴팔
     int z = R.drawable.xxx_50; // 없을때
 
     int m_Maximum_temperature = 0; // 최대 온도
     int m_Lowest_temperature = 0; // 최저 온도
     String high = "";
     String Low = "";
+    int m_crain = 0; // 강수량
+    double m_cwind = 0.0; // 비림세기
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +80,7 @@ public class WeatherClothesPage extends AppCompatActivity{
         V_txtOuter2 = (TextView) findViewById(R.id.txt_outer2);
         V_txtBottom1  = (TextView) findViewById(R.id.txt_bottom1);
         V_txtBottom2 = (TextView) findViewById(R.id.txt_bottom2);
+        V_advice = (TextView) findViewById(R.id.txt_advice); // 조언 문구
 
         Intent intent = getIntent(); /*데이터 수신*/
 
@@ -105,6 +111,14 @@ public class WeatherClothesPage extends AppCompatActivity{
         Log.d("m_Maximum_temperature", String.valueOf(m_Maximum_temperature));
         Log.d("m_Lowest_temperature", String.valueOf(m_Lowest_temperature));
 
+        String rain = intent.getExtras().getString("Crain");
+        String wind = intent.getExtras().getString("Cwind");
+        // 현재 강수량
+        m_crain = Integer.parseInt(rain);
+        Log.d("m_crain", String.valueOf(m_crain));
+        // 현재 바람세기
+        m_cwind = Double.parseDouble(wind);
+        Log.d("m_cwind", String.valueOf(m_cwind));
         // 날씨별 옷차림
         TempClothesShow();
 
@@ -119,142 +133,199 @@ public class WeatherClothesPage extends AppCompatActivity{
         });
     }
 
-    //m_Maximum_temperature m_Lowest_temperature
     // 최고기온과 최저기온에 따른 옷차림.
     public void TempClothesShow()
     {
         // 최고기온
         if(m_Maximum_temperature <= 4) {
             Log.d("TempClothesShow", "4");
-            V_ITopclothes1.setImageResource(g);
-            V_IOuterclothes1.setImageResource(a);
+            V_ITopclothes1.setImageResource(b);
+            V_IOuterclothes1.setImageResource(n);
             V_IBottomclothes1.setImageResource(h);
-            V_txtTop1.setText("얇은 가디건");
-            V_txtOuter1.setText("긴팔");
-            V_txtBottom1.setText("슬랙스");
+            V_txtTop1.setText("맨투맨");
+            V_txtOuter1.setText("패딩");
+            V_txtBottom1.setText("기모 슬랙스");
         }else if (m_Maximum_temperature >= 5 && m_Maximum_temperature <= 8){
             Log.d("TempClothesShow", "5");
-            V_ITopclothes1.setImageResource(g);
-            V_IOuterclothes1.setImageResource(a);
-            V_IBottomclothes1.setImageResource(h);
-            V_txtTop1.setText("얇은 가디건");
-            V_txtOuter1.setText("긴팔");
-            V_txtBottom1.setText("슬랙스");
+            V_ITopclothes1.setImageResource(b);
+            V_IOuterclothes1.setImageResource(e);
+            V_IBottomclothes1.setImageResource(i);
+            V_txtTop1.setText("기모 맨투맨");
+            V_txtOuter1.setText("헤비코트");
+            V_txtBottom1.setText("기모 청바지");
         }else if (m_Maximum_temperature >= 9 && m_Maximum_temperature <= 11){
             Log.d("TempClothesShow", "9");
-            V_ITopclothes1.setImageResource(g);
-            V_IOuterclothes1.setImageResource(a);
-            V_IBottomclothes1.setImageResource(h);
-            V_txtTop1.setText("얇은 가디건");
-            V_txtOuter1.setText("긴팔");
-            V_txtBottom1.setText("슬랙스");
+            V_ITopclothes1.setImageResource(l);
+            V_IOuterclothes1.setImageResource(m);
+            V_IBottomclothes1.setImageResource(d);
+            V_txtTop1.setText("긴팔 셔츠");
+            V_txtOuter1.setText("두꺼운 가디건");
+            V_txtBottom1.setText("기모 면바지");
         }else if (m_Maximum_temperature >= 12 && m_Maximum_temperature <= 16){
             Log.d("TempClothesShow", "12");
-            V_ITopclothes1.setImageResource(g);
-            V_IOuterclothes1.setImageResource(a);
+            V_ITopclothes1.setImageResource(o);
+            V_IOuterclothes1.setImageResource(c);
             V_IBottomclothes1.setImageResource(h);
-            V_txtTop1.setText("얇은 가디건");
-            V_txtOuter1.setText("긴팔");
+            V_txtTop1.setText("긴팔");
+            V_txtOuter1.setText("얇은 자켓");
             V_txtBottom1.setText("슬랙스");
         }else if (m_Maximum_temperature >= 17 && m_Maximum_temperature <= 19){
             Log.d("TempClothesShow", "17");
-            V_ITopclothes1.setImageResource(g);
+            V_ITopclothes1.setImageResource(l);
             V_IOuterclothes1.setImageResource(a);
-            V_IBottomclothes1.setImageResource(h);
-            V_txtTop1.setText("얇은 가디건");
-            V_txtOuter1.setText("긴팔");
-            V_txtBottom1.setText("슬랙스");
+            V_IBottomclothes1.setImageResource(i);
+            V_txtTop1.setText("긴팔셔츠");
+            V_txtOuter1.setText("얇은 가디건");
+            V_txtBottom1.setText("청바지");
         }else if (m_Maximum_temperature >= 20 && m_Maximum_temperature <= 22){
             Log.d("TempClothesShow", "20");
             V_ITopclothes1.setImageResource(g);
             V_IOuterclothes1.setImageResource(a);
-            V_IBottomclothes1.setImageResource(h);
-            V_txtTop1.setText("얇은 가디건");
-            V_txtOuter1.setText("긴팔");
-            V_txtBottom1.setText("슬랙스");
+            V_IBottomclothes1.setImageResource(d);
+            V_txtTop1.setText("반팔");
+            V_txtOuter1.setText("얇은 가디건");
+            V_txtBottom1.setText("면바지");
         }else if (m_Maximum_temperature >= 23 && m_Maximum_temperature <= 27){
             Log.d("TempClothesShow", "23");
             V_ITopclothes1.setImageResource(g);
-            V_IOuterclothes1.setImageResource(a);
+            V_IOuterclothes1.setImageResource(z);
             V_IBottomclothes1.setImageResource(h);
-            V_txtTop1.setText("얇은 가디건");
-            V_txtOuter1.setText("긴팔");
-            V_txtBottom1.setText("슬랙스");
+            V_txtTop1.setText("반팔/셔츠");
+            V_txtOuter1.setText("");
+            V_txtBottom1.setText("얇은 슬랙스");
         }else {
             Log.d("TempClothesShow", "28");
             V_ITopclothes1.setImageResource(g);
-            V_IOuterclothes1.setImageResource(a);
-            V_IBottomclothes1.setImageResource(h);
-            V_txtTop1.setText("얇은 가디건");
-            V_txtOuter1.setText("긴팔");
-            V_txtBottom1.setText("슬랙스");
+            V_IOuterclothes1.setImageResource(z);
+            V_IBottomclothes1.setImageResource(f);
+            V_txtTop1.setText("반팔/셔츠");
+            V_txtOuter1.setText("");
+            V_txtBottom1.setText("반바지");
         }
 
         // 최저기온
         if(m_Lowest_temperature <= 4) {
             Log.d("TempClothesShow", "4");
             V_ITopclothes2.setImageResource(b);
-            V_IOuterclothes2.setImageResource(c);
-            V_IBottomclothes2.setImageResource(i);
-            V_txtTop2.setText("두꺼운 자켓");
-            V_txtOuter2.setText("반판");
-            V_txtBottom2.setText("청바지");
+            V_IOuterclothes2.setImageResource(n);
+            V_IBottomclothes2.setImageResource(h);
+            V_txtTop2.setText("맨투맨");
+            V_txtOuter2.setText("패딩");
+            V_txtBottom2.setText("기모 슬랙스");
         }else if (m_Lowest_temperature >= 5 && m_Lowest_temperature <= 8){
             Log.d("TempClothesShow", "5");
             V_ITopclothes2.setImageResource(b);
-            V_IOuterclothes2.setImageResource(c);
+            V_IOuterclothes2.setImageResource(e);
             V_IBottomclothes2.setImageResource(i);
-            V_txtTop2.setText("두꺼운 자켓");
-            V_txtOuter2.setText("반판");
-            V_txtBottom2.setText("청바지");
+            V_txtTop2.setText("기모 맨투맨");
+            V_txtOuter2.setText("헤비코트");
+            V_txtBottom2.setText("기모 청바지");
         }else if (m_Lowest_temperature >= 9 && m_Lowest_temperature <= 11){
             Log.d("TempClothesShow", "9");
-            V_ITopclothes2.setImageResource(b);
-            V_IOuterclothes2.setImageResource(c);
-            V_IBottomclothes2.setImageResource(i);
-            V_txtTop2.setText("두꺼운 자켓");
-            V_txtOuter2.setText("반판");
-            V_txtBottom2.setText("청바지");
+            V_ITopclothes2.setImageResource(l);
+            V_IOuterclothes2.setImageResource(m);
+            V_IBottomclothes2.setImageResource(h);
+            V_txtTop2.setText("긴팔 셔츠");
+            V_txtOuter2.setText("두꺼운 가디건");
+            V_txtBottom2.setText("기모 슬랙스");
         }else if (m_Lowest_temperature >= 12 && m_Lowest_temperature <= 16){
             Log.d("TempClothesShow", "12");
-            V_ITopclothes2.setImageResource(b);
+            V_ITopclothes2.setImageResource(o);
             V_IOuterclothes2.setImageResource(c);
-            V_IBottomclothes2.setImageResource(i);
-            V_txtTop2.setText("두꺼운 자켓");
-            V_txtOuter2.setText("반판");
-            V_txtBottom2.setText("청바지");
+            V_IBottomclothes2.setImageResource(h);
+            V_txtTop2.setText("긴팔");
+            V_txtOuter2.setText("얇은 자켓");
+            V_txtBottom2.setText("슬랙스");
         }else if (m_Lowest_temperature >= 17 && m_Lowest_temperature <= 19){
             Log.d("TempClothesShow", "17");
-            V_ITopclothes2.setImageResource(b);
-            V_IOuterclothes2.setImageResource(c);
+            V_ITopclothes2.setImageResource(l);
+            V_IOuterclothes2.setImageResource(a);
             V_IBottomclothes2.setImageResource(i);
-            V_txtTop2.setText("두꺼운 자켓");
-            V_txtOuter2.setText("반판");
+            V_txtTop2.setText("긴팔셔츠");
+            V_txtOuter2.setText("얇은 가디건");
             V_txtBottom2.setText("청바지");
         }else if (m_Lowest_temperature >= 20 && m_Lowest_temperature <= 22){
             Log.d("TempClothesShow", "20");
-            V_ITopclothes2.setImageResource(b);
-            V_IOuterclothes2.setImageResource(c);
-            V_IBottomclothes2.setImageResource(i);
-            V_txtTop2.setText("두꺼운 자켓");
-            V_txtOuter2.setText("반판");
-            V_txtBottom2.setText("청바지");
+            V_ITopclothes2.setImageResource(g);
+            V_IOuterclothes2.setImageResource(a);
+            V_IBottomclothes2.setImageResource(d);
+            V_txtTop2.setText("반팔");
+            V_txtOuter2.setText("얇은 가디건");
+            V_txtBottom2.setText("면바지");
         }else if (m_Lowest_temperature >= 23 && m_Lowest_temperature <= 27){
             Log.d("TempClothesShow", "23");
-            V_ITopclothes2.setImageResource(b);
-            V_IOuterclothes2.setImageResource(c);
-            V_IBottomclothes2.setImageResource(i);
-            V_txtTop2.setText("두꺼운 자켓");
-            V_txtOuter2.setText("반판");
-            V_txtBottom2.setText("청바지");
+            V_ITopclothes2.setImageResource(g);
+            V_IOuterclothes2.setImageResource(z);
+            V_IBottomclothes2.setImageResource(h);
+            V_txtTop2.setText("반팔/셔츠");
+            V_txtOuter2.setText("");
+            V_txtBottom2.setText("얇은 슬랙스");
         }else {
             Log.d("TempClothesShow", "28");
-            V_ITopclothes2.setImageResource(b);
-            V_IOuterclothes2.setImageResource(c);
-            V_IBottomclothes2.setImageResource(i);
-            V_txtTop2.setText("두꺼운 자켓");
-            V_txtOuter2.setText("반판");
-            V_txtBottom2.setText("청바지");
+            V_ITopclothes2.setImageResource(g);
+            V_IOuterclothes2.setImageResource(z);
+            V_IBottomclothes2.setImageResource(f);
+            V_txtTop2.setText("반팔/셔츠");
+            V_txtOuter2.setText("");
+            V_txtBottom2.setText("반바지");
+        }
+        // 조언문구
+        AdviceBox();
+    }
+    //m_Maximum_temperature m_Lowest_temperature
+    // 조언 문구
+    public void AdviceBox()
+    {
+        // 조언 문구
+        String CAdvice = AdviceBoxDaily_cross()  + AdviceBoxRain()  + AdviceBoxWind() + AdviceBoxMaxTemp();
+        V_advice.setText(CAdvice);
+    }
+
+    public String AdviceBoxDaily_cross()
+    {
+        int Daily_cross = m_Maximum_temperature - m_Lowest_temperature;
+        if(Daily_cross >= 7)
+        {
+            return "오늘은 일교차가 커요!!\n";
+        }else{
+            return "오늘은 일교차가 크지 않아요!!\n";
+        }
+    }
+
+    // 강수량
+    public String AdviceBoxRain()
+    {
+        if(m_crain >= 0 && m_crain <= 50)
+        {
+            return "";
+        }else{
+            return "오늘은 비가 오니깐 우산은 필수!~\n";
+        }
+    }
+
+    // 바람 세기
+    public String AdviceBoxWind()
+    {
+        if(m_cwind >= 0.0 && m_cwind >= 1.0)
+        {
+            return "오늘은 바람이 하나도 안 불어요~!\n";
+        }else if (m_cwind >= 1.1 && m_cwind >= 2.0)
+        {
+            return "오늘은 바람이 조금 불어요~!\n";
+        }else {
+            return "오늘은 바람이 엄청 불어요~!\n";
+        }
+    }
+
+    // 최고 기온에 따른 조언 문구
+    public String AdviceBoxMaxTemp()
+    {
+        if(m_Maximum_temperature >= 25) {
+            return "금일 여름 중에서 많이 더워요~!\n";
+        }else if (m_Maximum_temperature >= 15){
+            return "오늘은 쌀쌀한 편이군요~\n";
+        }else {
+            return "오늘은 따뜻하게 입는게 좋겠군요\n";
         }
     }
 }

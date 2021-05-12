@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="최고 기온:"
             android:textSize="20dp"
-            android:textColor="#372F2C"
+            android:textColor="#ffebee"
             android:layout_marginLeft="50dp"
             android:fontFamily="@font/maplestory_bold"
             android:textStyle="bold"/>
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:text="17°C"
             android:textSize="20dp"
-            android:textColor="#372F2C"
+            android:textColor="#ffebee"
             android:fontFamily="@font/maplestory_bold"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"/>
@@ -69,7 +69,7 @@
             android:text="최저기온:"
             android:textSize="20dp"
             android:layout_marginLeft="50dp"
-            android:textColor="#372F2C"
+            android:textColor="#e3f2fd"
             android:fontFamily="@font/maplestory_bold"
             android:textStyle="bold"/>
         <TextView
@@ -80,7 +80,7 @@
             android:textSize="20dp"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/maplestory_bold"
-            android:textColor="#372F2C"
+            android:textColor="#e3f2fd"
             android:textStyle="bold"/>
     </LinearLayout>
 
@@ -151,7 +151,6 @@
             android:layout_height="200dp"
             android:layout_marginLeft="15dp"
             android:orientation="vertical"
-            android:background= "@drawable/round1"
             >
             <LinearLayout
                 android:layout_width="200dp"
@@ -161,15 +160,15 @@
                     android:id="@+id/img_Topclothes1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/shirt48"
-                    android:background="#fff"
+                    android:src="@drawable/abcd"
+                    android:background="#ffebee"
                     />
 
                 <TextView
                     android:id="@+id/txt_top1"
                     android:layout_width="80dp"
                     android:layout_height="100dp"
-                    android:background="#fff"
+                    android:background="#ffebee"
                     android:gravity="center"
                     android:text="반팔티긴팔긴팔긴팔긴팔"
                     android:textSize="12dp"
@@ -187,7 +186,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:src="@drawable/shirt48"
-                    android:background="#fff"
+                    android:background="#e3f2fd"
                     />
                 <TextView
                     android:id="@+id/txt_top2"
@@ -195,7 +194,7 @@
                     android:layout_height="100dp"
                     android:text="긴팔"
                     android:gravity="center"
-                    android:background="#fff"
+                    android:background="#e3f2fd"
                     android:textSize="12dp"
                     android:fontFamily="@font/maplestory_light"
                     android:textColor="#221818"
@@ -207,7 +206,6 @@
             android:layout_height="200dp"
             android:layout_marginLeft="20dp"
             android:orientation="vertical"
-            android:background= "@drawable/round1"
             >
             <LinearLayout
                 android:layout_width="200dp"
@@ -219,7 +217,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:src="@drawable/shirt48"
-                    android:background="#fff"
+                    android:background="#ffebee"
                     />
 
                 <TextView
@@ -228,10 +226,11 @@
                     android:layout_height="100dp"
                     android:text="반팔티"
                     android:gravity="center"
-                    android:background="#fff"
+                    android:background="#ffebee"
                     android:textSize="12dp"
                     android:fontFamily="@font/maplestory_light"
-                    android:textColor="#221818"></TextView>
+                    android:textColor="#221818">
+                </TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="200dp"
@@ -243,7 +242,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:src="@drawable/shirt48"
-                    android:background="#fff"
+                    android:background="#e3f2fd"
                     />
                 <TextView
                     android:id="@+id/txt_outer2"
@@ -251,8 +250,9 @@
                     android:layout_height="100dp"
                     android:text="긴팔"
                     android:gravity="center"
-                    android:background="#fff"
+                    android:background="#e3f2fd"
                     android:textSize="12dp"
+                    android:fontFamily="@font/maplestory_light"
                     android:textColor="#221818"></TextView>
             </LinearLayout>
         </LinearLayout>
@@ -295,7 +295,7 @@
             android:layout_height="200dp"
             android:layout_marginLeft="15dp"
             android:orientation="vertical"
-            android:background= "@drawable/round1">
+            >
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="100dp"
@@ -305,7 +305,7 @@
                     android:id="@+id/img_Bottomclothes1"
                     android:layout_width="97dp"
                     android:layout_height="100dp"
-                    android:background="#fff"
+                    android:background="#ffebee"
                     android:src="@drawable/shirt48" />
 
                 <TextView
@@ -314,7 +314,7 @@
                     android:layout_height="100dp"
                     android:text="반팔티"
                     android:gravity="center"
-                    android:background="#fff"
+                    android:background="#ffebee"
                     android:textSize="12dp"
                     android:fontFamily="@font/maplestory_light"
                     android:textColor="#221818"></TextView>
@@ -330,7 +330,7 @@
                     android:layout_width="97dp"
                     android:layout_height="100dp"
                     android:src="@drawable/shirt48"
-                    android:background="#fff"
+                    android:background="#e3f2fd"
                     />
                 <TextView
                     android:id="@+id/txt_bottom2"
@@ -338,7 +338,7 @@
                     android:layout_height="100dp"
                     android:text="긴팔"
                     android:gravity="center"
-                    android:background="#fff"
+                    android:background="#e3f2fd"
                     android:textSize="12dp"
                     android:fontFamily="@font/maplestory_light"
                     android:textColor="#221818"/>
@@ -353,6 +353,7 @@
             android:layout_marginLeft="20dp"
             >
             <TextView
+                android:id="@+id/txt_advice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

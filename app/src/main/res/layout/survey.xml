@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/txt_Main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="설문지"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/textcolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.078" />
+    <!--    // 성별-->
+    <TextView
+        android:id="@+id/txt_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. 성별"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:textColor="@color/textcolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.151" />
+
+    <RadioGroup
+        android:id="@+id/rGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/rb_man"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남자"
+            android:textColor="@color/textcolor"/>
+
+        <RadioButton
+            android:id="@+id/rb_woman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여자"
+            android:textColor="@color/textcolor"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txt_heat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. 더위"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:textColor="@color/textcolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.346" />
+
+    <RadioGroup
+        android:id="@+id/rGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/rb_very"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="더위를 많이 타는 타입"
+            android:textColor="@color/textcolor"/>
+
+        <RadioButton
+            android:id="@+id/rb_little"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="더위를 적게 타는 타입"
+            android:textColor="@color/textcolor"/>
+    </RadioGroup>
+
+    <!--    // 옷 스타일-->
+
+    <TextView
+        android:id="@+id/txt_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. 옷 스타일"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:textColor="@color/textcolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.542" />
+
+    <RadioGroup
+        android:id="@+id/rGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.822"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/rb_casual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="캐주얼 타입"
+            android:textColor="@color/textcolor"/>
+
+        <RadioButton
+            android:id="@+id/rb_vintage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="빈티지 타입"
+            android:textColor="@color/textcolor"/>
+
+        <RadioButton
+            android:id="@+id/rb_street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="스트릿 타입"
+            android:textColor="@color/textcolor"/>
+
+        <RadioButton
+            android:id="@+id/rb_dandy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="댄디 타입"
+            android:textColor="@color/textcolor"/>
+
+        <RadioButton
+            android:id="@+id/rb_sporty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="스프티 타입"
+            android:textColor="@color/textcolor"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="취소"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

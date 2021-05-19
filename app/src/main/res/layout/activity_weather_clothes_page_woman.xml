@@ -28,14 +28,13 @@
             android:fontFamily="@font/maplestory_bold"
             android:layout_marginBottom="15dp"
             />
-
         <ImageView
-            android:id="@+id/img_man"
+            android:id="@+id/img_woman"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="240dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/male48" />
+            android:layout_marginLeft="240dp"
+            android:src="@drawable/female48"/>
     </LinearLayout>
 
     <!--    기온-->

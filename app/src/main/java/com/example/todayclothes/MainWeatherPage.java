@@ -1,5 +1,6 @@
 package com.example.todayclothes;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -7,14 +8,21 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -85,6 +93,9 @@ public class MainWeatherPage extends AppCompatActivity {
     ImageView V_weatherTwoNext;
 
     ImageButton V_to_weatherPage;
+
+    // 환경설정을 위해 사용함.
+    ImageButton V_Setting;
 
     // 설문조사 페이지
     Dialog dialog;
@@ -170,6 +181,7 @@ public class MainWeatherPage extends AppCompatActivity {
 //*******************************************************
 
     Boolean progressCheck;
+    Boolean m_SettingCheck = false;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -216,6 +228,10 @@ public class MainWeatherPage extends AppCompatActivity {
         V_weatherNext = (ImageView) findViewById(R.id.nextweatherI); // 내일날씨
         V_weatherTwoNext = (ImageView) findViewById(R.id.TwonextweatherI); // 모레날씨
         V_to_weatherPage = (ImageButton) findViewById(R.id.btn_ToWeatherClothesPage); // 추천 옷차림 버튼
+        V_Setting = (ImageButton) findViewById(R.id.IB_Setting);
+
+        // 환경 설정 버튼
+        registerForContextMenu(V_Setting);
 
         // 설문조사 페이지
         dialog = new Dialog(MainWeatherPage.this);
@@ -317,6 +333,7 @@ public class MainWeatherPage extends AppCompatActivity {
                 }
             }
         });
+
     } // end onCreate
 
     // 날짜 계산기.
@@ -328,7 +345,49 @@ public class MainWeatherPage extends AppCompatActivity {
         return dtFormat.format(cal.getTime());
     }
 
+    // 환경설정 메뉴바 이용
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater menuInflater = getMenuInflater();
+
+        if (v == V_Setting) {
+
+            menuInflater.inflate(R.menu.setting_menu, menu);
+        }
+
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.set_survey:
+                Log.d("설문지","성공");
+                Log.d("servey", "servey1");
+                // 환경설정에서 설문지를 바꾸었다면
+                m_SettingCheck = true;
+                showDialog01(); // 아래 showDialog01() 함수 호출
+                return true;
+        }
+        return false;
+    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.setting_menu, menu);
+//        return true;
+//    }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()){
+//            case R.id.set_survey:
+//                Log.d("설문지","성공");
+//                break;
+//        }
+//        return true;
+//    }
     //******************************************************
     // 날씨 API
     public void startWeather()
@@ -940,7 +999,12 @@ public class MainWeatherPage extends AppCompatActivity {
                 sh.edit().putString("heat", heat).commit(); // 더위 저장
                 sh.edit().putString("style", style).commit(); // 스타일 저장
                 Log.d("statusLocked", String.valueOf(statusLocked)); // 결과값
-                if(gender.equals("남자")) {
+                // 환경설정에서 설문지를 바꿀 경우
+                if(m_SettingCheck == true){
+                    Log.d("servey", "servey2");
+                    m_SettingCheck = false;
+                    dialog.dismiss();
+                } else if(gender.equals("남자")) {
                     Intent intent = new Intent(getApplicationContext(), WeatherClothesPage_man.class);
                     intent.putExtra("cTemp",m_cTemperlist.get(0).toString()); // 현재기온
                     intent.putExtra("CHighTemp",m_CHighTemp); // 금일 최고기온

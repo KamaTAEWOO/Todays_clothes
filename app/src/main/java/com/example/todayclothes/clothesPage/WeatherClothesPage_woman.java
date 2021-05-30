@@ -16,12 +16,17 @@ import android.widget.TextView;
 
 import com.example.todayclothes.MainWeatherPage;
 import com.example.todayclothes.R;
+import com.example.todayclothes.myCodyPage.MyCodyPage;
 
 public class WeatherClothesPage_woman extends AppCompatActivity {
     TextView V_CTemp;
     TextView V_CHTemp;
     TextView V_CLTemp;
+
     ImageButton V_IweatherPage;
+    ImageButton V_IClothesPage;
+    ImageButton V_IMyCodyPage;
+
     ImageView V_ITopclothes1;
     ImageView V_ITopclothes2;
     ImageView V_ITopclothes3;
@@ -81,6 +86,8 @@ public class WeatherClothesPage_woman extends AppCompatActivity {
 
     // 옷 스타일 변수
     String m_MATCHING_style = ""; // 설문지 답.
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +96,10 @@ public class WeatherClothesPage_woman extends AppCompatActivity {
         V_CTemp = (TextView) findViewById(R.id.CTemp);
         V_CHTemp = (TextView) findViewById(R.id.CHTemp);
         V_CLTemp = (TextView) findViewById(R.id.CLTemp);
+
         V_IweatherPage = (ImageButton) findViewById(R.id.btn_weatherMainPage);
+        V_IClothesPage = (ImageButton) findViewById(R.id.btn_ToClothsPage);
+        V_IMyCodyPage = (ImageButton) findViewById(R.id.btn_ToMyCodyPage);
 
         V_ITopclothes1 = (ImageView) findViewById(R.id.img_Topclothes1);
         V_ITopclothes2 = (ImageView) findViewById(R.id.img_Topclothes2);
@@ -188,6 +198,7 @@ public class WeatherClothesPage_woman extends AppCompatActivity {
         // 테스트
         MainTempClothesShow();
 
+        //Navigation Bar
         // 버튼
         V_IweatherPage.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -197,6 +208,25 @@ public class WeatherClothesPage_woman extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //나의 옷장로 이동
+        V_IClothesPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), MyCodyPage.class);
+//                startActivity(intent);
+            }
+        });
+
+        //나의 코디로 이동
+        V_IMyCodyPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyCodyPage.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
     // 여러가지옷 보여주는 추천 옷차림 함수

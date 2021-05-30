@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linear"
+    android:background="#d7ccc8"
+    tools:context=".myCodyPage.MyCodyPage">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="60dp"
+        android:background="#8c7b75"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_mycody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="My 코디"
+        android:textSize="25dp"
+        android:fontFamily="@font/maplestory_bold"
+        android:textStyle="bold"
+        android:textColor="#372F2C"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.634" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="62dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:text="저장"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/txt_mycody"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_cody_clothes"
+        android:layout_width="62dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="9dp"
+        android:text="앨범"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/btn_save"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="101dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#BA9494"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118" />
+
+    <ImageButton
+        android:id="@+id/imgB_pants"
+        android:layout_width="156dp"
+        android:layout_height="153dp"
+        android:background="#fff"
+        android:src="@drawable/plus_96"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgB_shoes"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgB_hat"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <ImageButton
+        android:id="@+id/imgB_shoes"
+        android:layout_width="156dp"
+        android:layout_height="153dp"
+        android:background="#fff"
+        android:src="@drawable/plus_96"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.774" />
+
+    <ImageButton
+        android:id="@+id/imgB_hat"
+        android:layout_width="156dp"
+        android:layout_height="153dp"
+        android:background="#fff"
+        android:src="@drawable/plus_96"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgB_Accessories1"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.27" />
+
+    <ImageButton
+        android:id="@+id/imgB_Accessories1"
+        android:layout_width="156dp"
+        android:layout_height="75dp"
+        android:background="#fff"
+        android:src="@drawable/plus_96"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_Accessories2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.966" />
+
+    <ImageButton
+        android:id="@+id/imgB_Accessories2"
+        android:layout_width="156dp"
+        android:layout_height="75dp"
+        android:background="#fff"
+        android:src="@drawable/plus_96"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toEndOf="@+id/imgB_hat"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.346" />
+
+    <ImageButton
+        android:id="@+id/imgB_top"
+        android:layout_width="156dp"
+        android:layout_height="153dp"
+        android:background="#fff"
+        android:src="@drawable/plus_96"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_pants"
+        app:layout_constraintEnd_toStartOf="@+id/imgB_outer"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgB_hat"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <ImageButton
+        android:id="@+id/imgB_outer"
+        android:layout_width="156dp"
+        android:layout_height="153dp"
+        android:background="#fff"
+        android:src="@drawable/plus_96"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_shoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <TextView
+        android:id="@+id/txt_view"
+        android:layout_width="216dp"
+        android:layout_height="32dp"
+        android:text="온도"
+        android:textColor="#190E0E"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_hat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toEndOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgB_shoes"
+        app:layout_constraintVertical_bias="0.777">
+
+        <ImageButton
+            android:id="@+id/btn_ToMainWeatherPage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/circle"
+            android:src="@drawable/clothes60"
+            android:text="추천"
+            android:textColor="#fff"
+            android:tint="#fff"
+            app:backgroundTint="#A1887F" />
+
+        <ImageButton
+            android:id="@+id/btn_ToWeatherClothesPage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/circle"
+            android:src="@drawable/closet48"
+            android:tint="#fff"
+            app:backgroundTint="#725B53" />
+
+        <ImageButton
+            android:id="@+id/btn_ToClothesPage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/circle"
+            android:src="@drawable/mycody"
+            android:tint="#fff"
+            app:backgroundTint="#795548" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

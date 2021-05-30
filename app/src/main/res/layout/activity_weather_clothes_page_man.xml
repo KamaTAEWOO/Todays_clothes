@@ -368,7 +368,6 @@
                             android:id="@+id/img_Outerclothes2"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/shirt48"
                             android:background="#ffebee"
                             />
 
@@ -392,7 +391,6 @@
                             android:id="@+id/img_Outerclothes3"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/shirt48"
                             android:background="#ffebee"
                             />
 
@@ -427,7 +425,6 @@
                             android:id="@+id/img_Outerclothes4"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/shirt48"
                             android:background="#e3f2fd"
                             />
 
@@ -451,7 +448,6 @@
                             android:id="@+id/img_Outerclothes5"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/shirt48"
                             android:background="#e3f2fd"
                             />
 
@@ -475,7 +471,6 @@
                             android:id="@+id/img_Outerclothes6"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/shirt48"
                             android:background="#e3f2fd"
                             />
 
@@ -551,8 +546,7 @@
                             android:id="@+id/img_Bottomclothes1"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:background="#ffebee"
-                            android:src="@drawable/shirt48" />
+                            android:background="#ffebee" />
 
                         <TextView
                             android:id="@+id/txt_bottom1"
@@ -578,8 +572,7 @@
                                 android:id="@+id/img_Bottomclothes2"
                                 android:layout_width="100dp"
                                 android:layout_height="80dp"
-                                android:background="#ffebee"
-                                android:src="@drawable/shirt48" />
+                                android:background="#ffebee" />
 
                             <TextView
                                 android:id="@+id/txt_bottom2"
@@ -601,8 +594,7 @@
                                 android:id="@+id/img_Bottomclothes3"
                                 android:layout_width="100dp"
                                 android:layout_height="80dp"
-                                android:background="#ffebee"
-                                android:src="@drawable/shirt48" />
+                                android:background="#ffebee" />
 
                             <TextView
                                 android:id="@+id/txt_bottom3"
@@ -636,7 +628,6 @@
                             android:id="@+id/img_Bottomclothes4"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/shirt48"
                             android:background="#e3f2fd"
                             />
                         <TextView
@@ -658,7 +649,6 @@
                             android:id="@+id/img_Bottomclothes5"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/shirt48"
                             android:background="#e3f2fd"
                             />
                         <TextView
@@ -680,7 +670,6 @@
                             android:id="@+id/img_Bottomclothes6"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/shirt48"
                             android:background="#e3f2fd"
                             />
                         <TextView
@@ -736,10 +725,11 @@
             android:text="추천"
             android:textColor="#fff"
             android:background="@drawable/circle"
-            android:src="@drawable/cloudy40"
+            android:src="@drawable/iweather"
             android:tint="#fff"
             app:backgroundTint="#A1887F" />
         <ImageButton
+            android:id="@+id/btn_ToClothsPage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="40dp"
@@ -748,6 +738,7 @@
             android:tint="#fff"
             app:backgroundTint="#725B53" />
         <ImageButton
+            android:id="@+id/btn_ToMyCodyPage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="40dp"

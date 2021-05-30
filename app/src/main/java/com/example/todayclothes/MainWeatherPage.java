@@ -9,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -29,6 +30,7 @@ import android.widget.Toast;
 
 import com.example.todayclothes.clothesPage.WeatherClothesPage_man;
 import com.example.todayclothes.clothesPage.WeatherClothesPage_woman;
+import com.example.todayclothes.myCodyPage.MyCodyPage;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -92,7 +94,9 @@ public class MainWeatherPage extends AppCompatActivity {
     ImageView V_weatherNext;
     ImageView V_weatherTwoNext;
 
-    ImageButton V_to_weatherPage;
+    ImageButton V_to_weatherClothesPage; //추천 화면
+    ImageButton V_to_myCodyPage; // 마이코디
+    ImageButton V_to_ClothesPage; // 옷장
 
     // 환경설정을 위해 사용함.
     ImageButton V_Setting;
@@ -227,7 +231,9 @@ public class MainWeatherPage extends AppCompatActivity {
         V_weatherI8 = (ImageView) findViewById(R.id.weatherI8); // 시간별
         V_weatherNext = (ImageView) findViewById(R.id.nextweatherI); // 내일날씨
         V_weatherTwoNext = (ImageView) findViewById(R.id.TwonextweatherI); // 모레날씨
-        V_to_weatherPage = (ImageButton) findViewById(R.id.btn_ToWeatherClothesPage); // 추천 옷차림 버튼
+        V_to_weatherClothesPage = (ImageButton) findViewById(R.id.btn_ToWeatherClothesPage); // 추천 옷차림 버튼
+        V_to_myCodyPage = (ImageButton) findViewById(R.id.btn_ToMyCodyPage); // 나의 코디 페이지 이동
+        V_to_ClothesPage = (ImageButton) findViewById(R.id.btn_ToClothsPage); // 옷장 페이지 이동
         V_Setting = (ImageButton) findViewById(R.id.IB_Setting);
 
         // 환경 설정 버튼
@@ -306,7 +312,9 @@ public class MainWeatherPage extends AppCompatActivity {
         boolean surveyCheck = sh.getBoolean("surveyCheck", false);
         String gender = sh.getString("gender", "없음"); // 성별 저장
 
-        V_to_weatherPage.setOnClickListener(new View.OnClickListener(){
+
+        // navigation bar
+        V_to_weatherClothesPage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
             {
@@ -334,6 +342,23 @@ public class MainWeatherPage extends AppCompatActivity {
             }
         });
 
+        //나의 옷장로 이동
+        V_to_ClothesPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), MyCodyPage.class);
+//                startActivity(intent);
+            }
+        });
+
+        //나의 코디로 이동
+        V_to_myCodyPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyCodyPage.class);
+                startActivity(intent);
+            }
+        });
     } // end onCreate
 
     // 날짜 계산기.
@@ -346,7 +371,6 @@ public class MainWeatherPage extends AppCompatActivity {
     }
 
     // 환경설정 메뉴바 이용
-
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -397,7 +421,6 @@ public class MainWeatherPage extends AppCompatActivity {
             @Override
             public void run(){
                 m_data = getXmlData();
-
                 runOnUiThread(new Runnable()
                 {
                     @Override
@@ -422,7 +445,7 @@ public class MainWeatherPage extends AppCompatActivity {
     {
         StringBuffer buffer = new StringBuffer(); // 출력될 값들을 한번에 보여주기 위해 사용.
         //Log.d("mbase_data", mbase_data);
-        //String queryUrl =  "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?serviceKey=" + key + "&pageNo=1&numOfRows=10&dataType=XML&base_date=20210325&base_time=0500&nx=93&ny=91";
+        //String queryUrl =  "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?serviceKey=" + key + "&pageNo=1&numOfRows=2550&dataType=XML&base_date=20210525&base_time=0500&nx=91&ny=90";
         String queryUrl =  "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?serviceKey=" + key + "&pageNo=" + mpageNo + "&numOfRows=" + mnumbverOfRows + "&dataType=" + mdataType + "&base_date=" + mbase_data +"&base_time=" + mbase_time + "&nx=" + String.valueOf(MainActivity.m_MyLocationX) + "&ny=" + String.valueOf(MainActivity.m_MyLocationY);
         Log.d("queryUrl", queryUrl);
         try
@@ -578,13 +601,13 @@ public class MainWeatherPage extends AppCompatActivity {
                                 m_highTemperlist.add(xpp.getText());
                                 //Log.d("!!m_highTemperlist==", m_highTemperlist.get(0).toString());
                             }
-                            if((m_MtDay.equals(m_twonextDay) && m_temp.equals("아침 최저기온") == true))
+                            if(m_temp.equals("아침 최저기온") == true)
                             {
                                 m_lowTemperlist.add(xpp.getText());
                                 //Log.d("!!m_lowTemperlist==", m_lowTemperlist.get(1).toString());
                             }
 //                            // 현재기준 다음날 최고기온 변수에 담아둔다.
-                            if((m_MtDay.equals(m_twonextDay) && m_temp.equals("낮 최고기온") == true))
+                            if(m_temp.equals("낮 최고기온") == true)
                             {
                                 m_highTemperlist.add(xpp.getText());
                                 //Log.d("!!m_highTemperlist==", m_highTemperlist.get(1).toString());
@@ -633,6 +656,7 @@ public class MainWeatherPage extends AppCompatActivity {
         }
         buffer.append("파싱종료");
         //Log.d("파싱===>", buffer.toString());
+
         return  buffer.toString();
 
     }// end getXmlData()
@@ -741,7 +765,7 @@ public class MainWeatherPage extends AppCompatActivity {
 ////            Log.d("현재날짜===",baseTime);
 ////            return baseTime;
 //        }
-        if(m_hour.equals("2300") || m_hour.equals("0000") || m_hour.equals("0100") || m_hour.equals("0200") || m_hour.equals("0300"))
+        if(m_hour.equals("0000") || m_hour.equals("0300"))
         {
             calBase = Calendar.getInstance(); // 현재시간 가져옴
             calBase.add(Calendar.DATE , -1);
@@ -766,11 +790,6 @@ public class MainWeatherPage extends AppCompatActivity {
 
         // 현재 시간에 따라 데이터 시간 설정(3시간 마다 업데이트) //
         switch(hh) {
-            case "2300":
-            case "0000":
-            case "0100":
-                m_hour = "0000";
-                break;
             case "0200":
             case "0300":
             case "0400":
@@ -801,8 +820,14 @@ public class MainWeatherPage extends AppCompatActivity {
             case "1900":
                 m_hour = "1800";
                 break;
-            default:
+            case "2000":
+            case "2100":
+            case "2200":
+            case "2300":
                 m_hour = "2100";
+                break;
+            default:
+                m_hour = "0000";
         }
         Log.d("시간==", m_hour);
         return m_hour;
@@ -852,35 +877,35 @@ public class MainWeatherPage extends AppCompatActivity {
     {
         Log.d("nextWeatherData()", "들어옴");
         // String 자르기...
-        if(m_highTemperlist.get(0).toString().substring(1,2).equals(".")){
-            String high1 = m_highTemperlist.get(0).toString().substring(0,1) + "°C";
+        if(m_highTemperlist.get(2).toString().substring(1,2).equals(".")){
+            String high1 = m_highTemperlist.get(2).toString().substring(0,1) + "°C";
             V_oneNextHighTemp.setText(high1);
         }else{
-            String high1 = m_highTemperlist.get(0).toString().substring(0,2) + "°C";
+            String high1 = m_highTemperlist.get(1).toString().substring(0,2) + "°C";
             V_oneNextHighTemp.setText(high1);
-        }
-
-        if(m_lowTemperlist.get(0).toString().substring(1,2).equals(".")){
-            String low1 = m_lowTemperlist.get(0).toString().substring(0,1) + "°C";
-            V_oneNextLowTemp.setText(low1);
-        }else{
-            String low1 = m_lowTemperlist.get(0).toString().substring(0,2) + "°C";
-            V_oneNextLowTemp.setText(low1);
-        }
-
-        if(m_highTemperlist.get(1).toString().substring(1,2).equals(".")){
-            String high2 = m_highTemperlist.get(1).toString().substring(0,1) + "°C";
-            V_twoNextHighTemp.setText(high2);
-        }else{
-            String high2 = m_highTemperlist.get(1).toString().substring(0,2) + "°C";
-            V_twoNextHighTemp.setText(high2);
         }
 
         if(m_lowTemperlist.get(1).toString().substring(1,2).equals(".")){
-            String low2 = m_lowTemperlist.get(1).toString().substring(0,1) + "°C";
+            String low1 = m_lowTemperlist.get(1).toString().substring(0,1) + "°C";
+            V_oneNextLowTemp.setText(low1);
+        }else{
+            String low1 = m_lowTemperlist.get(1).toString().substring(0,2) + "°C";
+            V_oneNextLowTemp.setText(low1);
+        }
+
+        if(m_highTemperlist.get(3).toString().substring(1,2).equals(".")){
+            String high2 = m_highTemperlist.get(3).toString().substring(0,1) + "°C";
+            V_twoNextHighTemp.setText(high2);
+        }else{
+            String high2 = m_highTemperlist.get(3).toString().substring(0,2) + "°C";
+            V_twoNextHighTemp.setText(high2);
+        }
+
+        if(m_lowTemperlist.get(2).toString().substring(1,2).equals(".")){
+            String low2 = m_lowTemperlist.get(2).toString().substring(0,1) + "°C";
             V_twoNextLowTemp.setText(low2);
         }else{
-            String low2 = m_lowTemperlist.get(1).toString().substring(0,2) + "°C";
+            String low2 = m_lowTemperlist.get(2).toString().substring(0,2) + "°C";
             V_twoNextLowTemp.setText(low2);
         }
     }

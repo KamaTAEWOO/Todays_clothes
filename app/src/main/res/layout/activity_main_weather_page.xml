@@ -609,10 +609,11 @@
             android:text="추천"
             android:textColor="#fff"
             android:background="@drawable/circle"
-            android:src="@drawable/shirt48"
+            android:src="@drawable/clothes60"
             android:tint="#fff"
             app:backgroundTint="#A1887F" />
         <ImageButton
+            android:id="@+id/btn_ToClothsPage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="40dp"
@@ -621,6 +622,7 @@
             android:tint="#fff"
             app:backgroundTint="#725B53" />
         <ImageButton
+            android:id="@+id/btn_ToMyCodyPage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="40dp"

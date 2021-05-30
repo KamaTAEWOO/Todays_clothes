@@ -40,12 +40,18 @@ import android.widget.TextView;
 
 import com.example.todayclothes.MainWeatherPage;
 import com.example.todayclothes.R;
+import com.example.todayclothes.myCodyPage.MyCodyPage;
 
 public class WeatherClothesPage_man extends AppCompatActivity{
     TextView V_CTemp;
     TextView V_CHTemp;
     TextView V_CLTemp;
+
+
     ImageButton V_IweatherPage;
+    ImageButton V_IClothesPage;
+    ImageButton V_IMyCodyPage;
+
     ImageView V_ITopclothes1;
     ImageView V_ITopclothes2;
     ImageView V_ITopclothes3;
@@ -109,12 +115,15 @@ public class WeatherClothesPage_man extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather_clothes_page);
+        setContentView(R.layout.activity_weather_clothes_page_man);
 
         V_CTemp = (TextView) findViewById(R.id.CTemp);
         V_CHTemp = (TextView) findViewById(R.id.CHTemp);
         V_CLTemp = (TextView) findViewById(R.id.CLTemp);
+
         V_IweatherPage = (ImageButton) findViewById(R.id.btn_weatherMainPage);
+        V_IClothesPage = (ImageButton) findViewById(R.id.btn_ToClothsPage);
+        V_IMyCodyPage = (ImageButton) findViewById(R.id.btn_ToMyCodyPage);
 
         V_ITopclothes1 = (ImageView) findViewById(R.id.img_Topclothes1);
         V_ITopclothes2 = (ImageView) findViewById(R.id.img_Topclothes2);
@@ -159,6 +168,7 @@ public class WeatherClothesPage_man extends AppCompatActivity{
         V_txtBottom6 = (TextView) findViewById(R.id.txt_bottom6);
 
         V_advice = (TextView) findViewById(R.id.txt_advice); // 조언 문구
+
         Intent intent = getIntent(); /*데이터 수신*/
 
         String man_cTemp = intent.getExtras().getString("cTemp"); // 현재온도
@@ -212,7 +222,9 @@ public class WeatherClothesPage_man extends AppCompatActivity{
         // 테스트
         MainTempClothesShow();
 
-        // 버튼
+
+        // Navigation Bar
+        // 메인 날씨 화면으로.
         V_IweatherPage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
@@ -221,6 +233,24 @@ public class WeatherClothesPage_man extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+        //나의 옷장로 이동
+        V_IClothesPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), MyCodyPage.class);
+//                startActivity(intent);
+            }
+        });
+
+    //나의 코디로 이동
+        V_IMyCodyPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyCodyPage.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

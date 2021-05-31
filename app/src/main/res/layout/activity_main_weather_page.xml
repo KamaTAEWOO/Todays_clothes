@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,464 +12,480 @@
 
     <!--    첫번째줄-->
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="3"
-        >
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@drawable/map_marker"
             android:layout_weight="0.1"
-            />
+            android:src="@drawable/map_marker" />
+
         <TextView
             android:id="@+id/myLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="현재 나의 위치 주소"
             android:layout_marginTop="7dp"
             android:layout_marginRight="5dp"
-            android:textSize="18dp"
-            android:textColor="#191313"
-            android:textStyle="bold"
             android:layout_weight="2.7"
             android:fontFamily="@font/maplestory_light"
-            />
+            android:text="현재 나의 위치 주소"
+            android:textColor="#191313"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
         <ImageButton
             android:id="@+id/IB_Setting"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_gravity="end"
-            android:src="@drawable/setting"
-            android:background="#00ffffff"
             android:layout_weight="0.2"
-            />
+            android:background="#00ffffff"
+            android:src="@drawable/setting" />
     </LinearLayout>
 
     <!--    날씨 정보 (기온, 날씨 그림, 강수량, 바람 세기)-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:id="@+id/linearLayout5"
+        android:layout_width="385dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="28dp"
         android:background="#8c7b75"
-        >
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
         <TextView
             android:id="@+id/txt_temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:layout_marginLeft="30dp"
-            android:text="19°C"
-            android:textSize="70dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/maplestory_bold"
+            android:text="19°C"
             android:textColor="#372F2C"
-            android:textStyle="bold"/>
+            android:textSize="70dp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/img_weather"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/cloudy"
-            android:layout_marginTop="50dp"
             android:layout_marginLeft="60dp"
-            />
+            android:layout_marginTop="50dp"
+            android:src="@drawable/cloudy" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:id="@+id/linearLayout7"
+        android:layout_width="385dp"
+        android:layout_height="48dp"
         android:background="#8c7b75"
-        >
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="30dp"
-            android:text="강수량:"
-            android:textSize="15dp"
-            android:textColor="#372F2C"
             android:fontFamily="@font/maplestory_bold"
-            android:textStyle="bold"/>
+            android:text="강수량:"
+            android:textColor="#372F2C"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/txt_rain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="15퍼"
-            android:textSize="15dp"
-            android:textColor="#372F2C"
             android:fontFamily="@font/maplestory_bold"
-            android:textStyle="bold"/>
+            android:text="15퍼"
+            android:textColor="#372F2C"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="바람 세기:"
-            android:textSize="15dp"
-            android:textColor="#372F2C"
             android:fontFamily="@font/maplestory_bold"
-            android:textStyle="bold"/>
+            android:text="바람 세기:"
+            android:textColor="#372F2C"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/txt_wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="강"
-            android:textSize="15dp"
-            android:textColor="#372F2C"
             android:fontFamily="@font/maplestory_bold"
-            android:textStyle="bold"/>
+            android:text="강"
+            android:textColor="#372F2C"
+            android:textSize="15dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <!--    3시간 마다 기온을 보여줌-->
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="#8c7b75">
+        android:layout_marginTop="32dp"
+        android:background="#8c7b75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
+                    android:fontFamily="@font/maplestory_light"
                     android:text="현재"
                     android:textColor="#372F2C"
-                    android:fontFamily="@font/maplestory_light"
                     android:textSize="18dp" />
 
                 <ImageView
                     android:id="@+id/weatherI1"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/cloudy"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="2dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:src="@drawable/cloudy" />
+
                 <TextView
                     android:id="@+id/Temp1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#372F2C"
-                    android:textSize="20dp"
                     android:fontFamily="@font/maplestory_bold"
                     android:text="19°C"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="20dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="15dp"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/Time1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#372F2C"
                     android:fontFamily="@font/maplestory_light"
                     android:text="00:00"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="18dp" />
+
                 <ImageView
                     android:id="@+id/weatherI2"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/cloudy"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:src="@drawable/cloudy" />
+
                 <TextView
                     android:id="@+id/Temp2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:textColor="#372F2C"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/maplestory_bold"
                     android:text="15°C"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="20dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="15dp"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/Time2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#372F2C"
                     android:fontFamily="@font/maplestory_light"
                     android:text="03:00"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="18dp" />
+
                 <ImageView
                     android:id="@+id/weatherI3"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/cloudy"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:src="@drawable/cloudy" />
+
                 <TextView
                     android:id="@+id/Temp3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#372F2C"
-                    android:textSize="20dp"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/maplestory_bold"
                     android:text="16°C"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="20dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="15dp"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/Time3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#372F2C"
                     android:fontFamily="@font/maplestory_light"
                     android:text="06:00"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="18dp" />
+
                 <ImageView
                     android:id="@+id/weatherI4"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/cloudy"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:src="@drawable/cloudy" />
+
                 <TextView
                     android:id="@+id/Temp4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#372F2C"
-                    android:textSize="20dp"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/maplestory_bold"
                     android:text="14°C"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="20dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="15dp"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/Time4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#372F2C"
                     android:fontFamily="@font/maplestory_light"
                     android:text="09:00"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="18dp" />
+
                 <ImageView
                     android:id="@+id/weatherI5"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/cloudy"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:src="@drawable/cloudy" />
+
                 <TextView
                     android:id="@+id/Temp5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:textColor="#372F2C"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/maplestory_bold"
                     android:text="13°C"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="20dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="15dp"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/Time5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#372F2C"
                     android:fontFamily="@font/maplestory_light"
                     android:text="12:00"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="18dp" />
+
                 <ImageView
                     android:id="@+id/weatherI6"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/cloudy"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:src="@drawable/cloudy" />
+
                 <TextView
                     android:id="@+id/Temp6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:textColor="#372F2C"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/maplestory_bold"
                     android:text="18°C"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="20dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="15dp"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/Time6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#372F2C"
                     android:fontFamily="@font/maplestory_light"
                     android:text="15:00"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="18dp" />
+
                 <ImageView
                     android:id="@+id/weatherI7"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/cloudy"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:src="@drawable/cloudy" />
+
                 <TextView
                     android:id="@+id/Temp7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:textColor="#372F2C"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/maplestory_bold"
                     android:text="15°C"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="20dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="20dp"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/Time7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#372F2C"
                     android:fontFamily="@font/maplestory_light"
                     android:text="18:00"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="18dp" />
+
                 <ImageView
                     android:id="@+id/weatherI8"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/cloudy"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:src="@drawable/cloudy" />
+
                 <TextView
                     android:id="@+id/Temp8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/maplestory_bold"
-                    android:textColor="#372F2C"
                     android:text="15°C"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="20dp" />
             </LinearLayout>
         </LinearLayout>
     </HorizontalScrollView>
+
     <!--    내일날씨-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout9"
+        android:layout_width="394dp"
+        android:layout_height="197dp"
         android:layout_marginTop="40dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="15dp"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView3">
+
+        <!--        모레날씨-->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/round2"
             android:layout_marginRight="25dp"
-            >
+            android:background="@drawable/round2"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="내일 날씨"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:layout_marginLeft="45dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/maplestory_bold"
+                android:text="내일 날씨"
                 android:textColor="#372F2C"
-                />
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="최고 기온:"
-                    android:textSize="15dp"
-                    android:textColor="#372F2C"
-                    android:fontFamily="@font/maplestory_bold"
                     android:layout_marginLeft="25dp"
-                    />
+                    android:fontFamily="@font/maplestory_bold"
+                    android:text="최고 기온:"
+                    android:textColor="#372F2C"
+                    android:textSize="15dp" />
+
                 <TextView
                     android:id="@+id/txt_next_HighTemp"
                     android:layout_width="wrap_content"
@@ -478,75 +494,75 @@
                     android:layout_marginRight="25dp"
                     android:text="20°C"
                     android:textColor="#372F2C"
-                    android:textSize="25dp"
-                    />
+                    android:textSize="25dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
-                    android:text="최저 기온:"
-                    android:textSize="15dp"
                     android:fontFamily="@font/maplestory_bold"
+                    android:text="최저 기온:"
                     android:textColor="#372F2C"
-                    />
+                    android:textSize="15dp" />
+
                 <TextView
                     android:id="@+id/txt_next_LowTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:text="2°C"
-                    android:textSize="25dp"
                     android:textColor="#372F2C"
-                    />
+                    android:textSize="25dp" />
             </LinearLayout>
+
             <ImageView
                 android:id="@+id/nextweatherI"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/cloudy"
                 android:layout_marginLeft="60dp"
                 android:layout_marginBottom="15dp"
-                />
+                android:src="@drawable/cloudy" />
 
         </LinearLayout>
 
-        <!--        모레날씨-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@drawable/round2"
-            >
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="모레 날씨"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:layout_marginLeft="45dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/maplestory_bold"
+                android:text="모레 날씨"
                 android:textColor="#372F2C"
-                />
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="최고 기온:"
-                    android:textSize="15dp"
                     android:layout_marginLeft="25dp"
                     android:fontFamily="@font/maplestory_bold"
+                    android:text="최고 기온:"
                     android:textColor="#372F2C"
-                    />
+                    android:textSize="15dp" />
+
                 <TextView
                     android:id="@+id/txt_two_next_HighTemp"
                     android:layout_width="wrap_content"
@@ -554,64 +570,67 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="25dp"
                     android:text="30°C"
-                    android:textSize="25dp"
                     android:textColor="#372F2C"
-                    />
+                    android:textSize="25dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
-                    android:textColor="#372F2C"
-                    android:text="최저 기온:"
                     android:fontFamily="@font/maplestory_bold"
-                    android:textSize="15dp"
-                    />
+                    android:text="최저 기온:"
+                    android:textColor="#372F2C"
+                    android:textSize="15dp" />
+
                 <TextView
                     android:id="@+id/txt_two_next_LowTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:textColor="#372F2C"
                     android:text="4°C"
-                    android:textSize="25dp"
-                    />
+                    android:textColor="#372F2C"
+                    android:textSize="25dp" />
             </LinearLayout>
+
             <ImageView
                 android:id="@+id/TwonextweatherI"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/cloudy"
                 android:layout_marginLeft="60dp"
                 android:layout_marginBottom="15dp"
-                />
+                android:src="@drawable/cloudy" />
         </LinearLayout>
-
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:orientation="horizontal"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="10dp"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
         <ImageButton
             android:id="@+id/btn_ToWeatherClothesPage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="50dp"
-            android:text="추천"
-            android:textColor="#fff"
             android:background="@drawable/circle"
             android:src="@drawable/clothes60"
+            android:text="추천"
+            android:textColor="#fff"
             android:tint="#fff"
             app:backgroundTint="#A1887F" />
+
         <ImageButton
             android:id="@+id/btn_ToClothsPage"
             android:layout_width="80dp"
@@ -621,6 +640,7 @@
             android:src="@drawable/closet48"
             android:tint="#fff"
             app:backgroundTint="#725B53" />
+
         <ImageButton
             android:id="@+id/btn_ToMyCodyPage"
             android:layout_width="80dp"
@@ -634,4 +654,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -232,7 +232,8 @@ public class MyCodyPage extends MainWeatherPage implements AdapterView.OnItemSel
         btn_ToWeatherClothesPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("gender", gender);
+                Log.d("gender", m_gender);
+                Log.d("gender", "응답하였음.");
                 if((surveyCheck == true) && (m_gender.equals("남자"))){
                     Intent intent = new Intent(getApplicationContext(), WeatherClothesPage_man.class);
                     intent.putExtra("cTemp",m_cTemperlist.get(0).toString()); // 현재기온
@@ -241,7 +242,7 @@ public class MyCodyPage extends MainWeatherPage implements AdapterView.OnItemSel
                     intent.putExtra("Crain", m_rainNumList.get(0).toString()); // 금일 강수량
                     intent.putExtra("Cwind", m_cWindlist.get(0).toString()); // 금일 바람세기
                     startActivity(intent);
-                }else if((surveyCheck == true) && (gender.equals("여자"))){
+                }else if((surveyCheck == true) && (m_gender.equals("여자"))){
                     Intent intent = new Intent(getApplicationContext(), WeatherClothesPage_woman.class);
                     intent.putExtra("cTemp",m_cTemperlist.get(0).toString()); // 현재기온
                     intent.putExtra("CHighTemp",m_CHighTemp); // 금일 최고기온

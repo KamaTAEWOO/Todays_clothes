@@ -40,7 +40,7 @@ import android.widget.TextView;
 
 import com.example.todayclothes.MainWeatherPage;
 import com.example.todayclothes.R;
-import com.example.todayclothes.myCodyPage.MyCodyPage;
+import com.example.todayclothes.MyCodyPage;
 
 public class WeatherClothesPage_man extends AppCompatActivity{
     TextView V_CTemp;

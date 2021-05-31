@@ -1,18 +1,18 @@
-package com.example.todayclothes.myCodyPage;
+package com.example.todayclothes;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.view.View;
 
 public class ScreenshotUtil {
-    private static com.example.todayclothes.myCodyPage.ScreenshotUtil mInstance;
+    private static ScreenshotUtil mInstance;
     private ScreenshotUtil() {
     }
-    public static com.example.todayclothes.myCodyPage.ScreenshotUtil getInstance() {
+    public static ScreenshotUtil getInstance() {
         if (mInstance == null) {
-            synchronized (com.example.todayclothes.myCodyPage.ScreenshotUtil.class) {
+            synchronized (ScreenshotUtil.class) {
                 if (mInstance == null) {
-                    mInstance = new com.example.todayclothes.myCodyPage.ScreenshotUtil();//^^
+                    mInstance = new ScreenshotUtil();//^^
                 }
             }
         }

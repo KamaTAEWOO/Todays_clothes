@@ -17,9 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TodayClothes"
         android:usesCleartextTraffic="true">
-        <activity android:name=".myCodyPage.FullScreenPage"></activity>
-        <activity android:name=".myCodyPage.StoryImagePage" />
-        <activity android:name=".myCodyPage.MyCodyPage" />
+        <activity android:name=".FullScreenPage"></activity>
+        <activity android:name=".StoryImagePage" />
+        <activity android:name=".MyCodyPage" />
         <activity android:name=".clothesPage.WeatherClothesPage_woman" />
         <activity android:name=".clothesPage.WeatherClothesPage_man" />
         <activity android:name=".MainWeatherPage" />

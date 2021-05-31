@@ -1,4 +1,4 @@
-package com.example.todayclothes.myCodyPage;
+package com.example.todayclothes;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,15 +21,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.todayclothes.MainWeatherPage;
-import com.example.todayclothes.R;
 import com.example.todayclothes.clothesPage.WeatherClothesPage_man;
+import com.example.todayclothes.clothesPage.WeatherClothesPage_woman;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -36,11 +35,10 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class MyCodyPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class MyCodyPage extends MainWeatherPage implements AdapterView.OnItemSelectedListener{
 
-    private static final String TAG = "TAG";
     // 스피너 사용
-    String[] m_S_temp = { "4~10", "11~15", "16~20", "21~26", "27~30"};
+    String[] m_S_temp = {"온도 지정", "4°C ~ 10°C", "11°C ~ 15°C", "16°C ~ 20°C", "21°C ~ 26°C", "27°C ~ 30°C"};
     // 스피너 선택한 것 보여주기
     TextView V_view;
 
@@ -69,8 +67,8 @@ public class MyCodyPage extends AppCompatActivity implements AdapterView.OnItemS
     ImageButton IB_m_top;
     ImageButton IB_m_outer;
 
-    Button btn_m_save; // 캡처 버튼
-    Button btn_m_codyClothes;
+    ImageButton btn_m_save; // 캡처 버튼
+    ImageButton btn_m_codyClothes;
     ConstraintLayout container;
 
     // 해당 인덱스 저장
@@ -94,6 +92,9 @@ public class MyCodyPage extends AppCompatActivity implements AdapterView.OnItemS
     static public ArrayList<Bitmap> MainImageArray = new ArrayList<Bitmap>(); // 최종만 넣어서 돌리기. 앱을 종료하기 전에 앨범 + 스크린샷
     SharedPreferences prefs;
     static boolean Check = false;
+    MainWeatherPage mw = new MainWeatherPage();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,11 +113,11 @@ public class MyCodyPage extends AppCompatActivity implements AdapterView.OnItemS
         IB_m_accessories2= (ImageButton) findViewById(R.id.imgB_Accessories2);
         IB_m_top= (ImageButton) findViewById(R.id.imgB_top);
         IB_m_outer= (ImageButton) findViewById(R.id.imgB_outer);
-        V_view = (TextView) findViewById(R.id.txt_view);
+        //V_view = (TextView) findViewById(R.id.txt_view);
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         // 캡처버튼
-        btn_m_save = (Button) findViewById(R.id.btn_save);
-        btn_m_codyClothes = (Button) findViewById(R.id.btn_cody_clothes);
+        btn_m_save = (ImageButton) findViewById(R.id.btn_save);
+        btn_m_codyClothes = (ImageButton) findViewById(R.id.btn_cody_clothes);
         container = (ConstraintLayout) findViewById(R.id.linear);
 
         FileLoad(); // 재실행시 파일 로드
@@ -231,8 +232,24 @@ public class MyCodyPage extends AppCompatActivity implements AdapterView.OnItemS
         btn_ToWeatherClothesPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent1 = new Intent(getApplicationContext(), WeatherClothesPage_man.class);
-//                startActivity(intent1);
+                Log.d("gender", gender);
+                if((surveyCheck == true) && (m_gender.equals("남자"))){
+                    Intent intent = new Intent(getApplicationContext(), WeatherClothesPage_man.class);
+                    intent.putExtra("cTemp",m_cTemperlist.get(0).toString()); // 현재기온
+                    intent.putExtra("CHighTemp",m_CHighTemp); // 금일 최고기온
+                    intent.putExtra("CLowTemp",m_CLowTemp); // 금일 최저기온
+                    intent.putExtra("Crain", m_rainNumList.get(0).toString()); // 금일 강수량
+                    intent.putExtra("Cwind", m_cWindlist.get(0).toString()); // 금일 바람세기
+                    startActivity(intent);
+                }else if((surveyCheck == true) && (gender.equals("여자"))){
+                    Intent intent = new Intent(getApplicationContext(), WeatherClothesPage_woman.class);
+                    intent.putExtra("cTemp",m_cTemperlist.get(0).toString()); // 현재기온
+                    intent.putExtra("CHighTemp",m_CHighTemp); // 금일 최고기온
+                    intent.putExtra("CLowTemp",m_CLowTemp); // 금일 최저기온
+                    intent.putExtra("Crain", m_rainNumList.get(0).toString()); // 금일 강수량
+                    intent.putExtra("Cwind", m_cWindlist.get(0).toString()); // 금일 바람세기
+                    startActivity(intent);
+                }
             }
         });
         // 옷장 화면
@@ -410,8 +427,11 @@ public class MyCodyPage extends AppCompatActivity implements AdapterView.OnItemS
     // 스피너 함수
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getApplicationContext(),m_S_temp[position] , Toast.LENGTH_LONG).show();
-        V_view.setText(m_S_temp[position]);
+        ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK); /* if you want your item to be white */
+        ((TextView) parent.getChildAt(0)).setTextSize(21);
+
+        //Toast.makeText(getApplicationContext(),m_S_temp[position] , Toast.LENGTH_LONG).show();
+        //V_view.setText(m_S_temp[position]);
     }
 
     @Override

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".myCodyPage.FullScreenPage">
+    tools:context=".FullScreenPage">
 
     <ImageView
         android:id="@+id/image_vview"
@@ -14,17 +14,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
     </ImageView>
 
-    <Button
-        android:id="@+id/back"
-        android:layout_width="107dp"
-        android:layout_height="60dp"
-        android:text="처음으로"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="253dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="4dp"
+        android:background="#d7ccc8"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+    <ImageButton
+        android:id="@+id/IB_set_remove"
+        android:layout_width="20dp"
+        android:layout_height="31dp"
+        android:background="@drawable/set_remove"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintHorizontal_bias="0.981"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.02" />

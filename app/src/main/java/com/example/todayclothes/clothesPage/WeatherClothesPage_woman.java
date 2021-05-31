@@ -4,9 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.todayclothes.MainWeatherPage;
 import com.example.todayclothes.R;
-import com.example.todayclothes.myCodyPage.MyCodyPage;
+import com.example.todayclothes.MyCodyPage;
 
 public class WeatherClothesPage_woman extends AppCompatActivity {
     TextView V_CTemp;

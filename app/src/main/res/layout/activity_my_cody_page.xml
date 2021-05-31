@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/linear"
     android:background="#d7ccc8"
-    tools:context=".myCodyPage.MyCodyPage">
+    tools:context=".MyCodyPage">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -37,48 +37,49 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.634" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_save"
-        android:layout_width="62dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginLeft="168dp"
-        android:text="저장"
+        android:layout_width="34dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginLeft="248dp"
+        android:background="@drawable/save"
         android:textSize="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toEndOf="@+id/txt_mycody"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.558" />
 
-    <Button
-        android:id="@+id/btn_cody_clothes"
-        android:layout_width="62dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="9dp"
-        android:text="앨범"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintStart_toEndOf="@+id/btn_save"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maplestory_bold"
+        android:text="나의 온도 : "
+        android:textColor="#372F2C"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_hat"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.494" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="101dp"
-        android:layout_height="33dp"
+        android:layout_width="178dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#BA9494"
+        android:background="#d7ccc8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.124" />
 
     <ImageButton
         android:id="@+id/imgB_pants"
@@ -178,20 +179,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.956" />
 
-    <TextView
-        android:id="@+id/txt_view"
-        android:layout_width="216dp"
-        android:layout_height="32dp"
-        android:text="온도"
-        android:textColor="#190E0E"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/imgB_hat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -207,9 +194,9 @@
             android:id="@+id/btn_ToMainWeatherPage"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="50dp"
             android:background="@drawable/circle"
-            android:src="@drawable/clothes60"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/iweather"
             android:text="추천"
             android:textColor="#fff"
             android:tint="#fff"
@@ -219,9 +206,9 @@
             android:id="@+id/btn_ToWeatherClothesPage"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="40dp"
             android:background="@drawable/circle"
-            android:src="@drawable/closet48"
+            android:src="@drawable/clothes60"
+            android:layout_marginLeft="20dp"
             android:tint="#fff"
             app:backgroundTint="#725B53" />
 
@@ -229,11 +216,21 @@
             android:id="@+id/btn_ToClothesPage"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="40dp"
             android:background="@drawable/circle"
-            android:src="@drawable/mycody"
+            android:src="@drawable/closet48"
+            android:layout_marginLeft="20dp"
             android:tint="#fff"
             app:backgroundTint="#795548" />
+
+        <ImageButton
+            android:id="@+id/btn_cody_clothes"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/circle"
+            android:src="@drawable/album"
+            android:layout_marginLeft="20dp"
+            android:tint="#fff"
+            app:backgroundTint="#54362B" />
 
     </LinearLayout>
 

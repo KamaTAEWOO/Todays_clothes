@@ -8,12 +8,9 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,15 +19,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupMenu;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.todayclothes.clothesPage.WeatherClothesPage_man;
 import com.example.todayclothes.clothesPage.WeatherClothesPage_woman;
-import com.example.todayclothes.myCodyPage.MyCodyPage;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -169,6 +163,8 @@ public class MainWeatherPage extends AppCompatActivity {
     // 금일 날짜 최고기온와 최저기온
     String m_CHighTemp = "";
     String m_CLowTemp = "";
+    public String m_gender = "";
+    boolean surveyCheck = false;
 
 
     // 요청 변수
@@ -309,8 +305,8 @@ public class MainWeatherPage extends AppCompatActivity {
 
         // shared preferences로 설문지를 다시 켰을때 true and false
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        boolean surveyCheck = sh.getBoolean("surveyCheck", false);
-        String gender = sh.getString("gender", "없음"); // 성별 저장
+        surveyCheck = sh.getBoolean("surveyCheck", false);
+        m_gender = sh.getString("gender", "없음"); // 성별 저장
 
 
         // navigation bar
@@ -318,8 +314,8 @@ public class MainWeatherPage extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Log.d("gender", gender);
-                if((surveyCheck == true) && (gender.equals("남자"))){
+                Log.d("gender", m_gender);
+                if((surveyCheck == true) && (m_gender.equals("남자"))){
                     Intent intent = new Intent(getApplicationContext(), WeatherClothesPage_man.class);
                     intent.putExtra("cTemp",m_cTemperlist.get(0).toString()); // 현재기온
                     intent.putExtra("CHighTemp",m_CHighTemp); // 금일 최고기온
@@ -327,7 +323,7 @@ public class MainWeatherPage extends AppCompatActivity {
                     intent.putExtra("Crain", m_rainNumList.get(0).toString()); // 금일 강수량
                     intent.putExtra("Cwind", m_cWindlist.get(0).toString()); // 금일 바람세기
                     startActivity(intent);
-                }else if((surveyCheck == true) && (gender.equals("여자"))){
+                }else if((surveyCheck == true) && (m_gender.equals("여자"))){
                     Intent intent = new Intent(getApplicationContext(), WeatherClothesPage_woman.class);
                     intent.putExtra("cTemp",m_cTemperlist.get(0).toString()); // 현재기온
                     intent.putExtra("CHighTemp",m_CHighTemp); // 금일 최고기온
@@ -1011,8 +1007,8 @@ public class MainWeatherPage extends AppCompatActivity {
         radioGroup2 = dialog.findViewById(R.id.rGroup2);
 
         //버튼
-        next_btn = dialog.findViewById(R.id.btn_next);
-        cancel_btn = dialog.findViewById(R.id.btn_cancel);
+        next_btn = dialog.findViewById(R.id.btn_next); // 저장버튼
+        cancel_btn = dialog.findViewById(R.id.btn_cancel); // 취소버튼
 
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1024,6 +1020,8 @@ public class MainWeatherPage extends AppCompatActivity {
                 sh.edit().putString("heat", heat).commit(); // 더위 저장
                 sh.edit().putString("style", style).commit(); // 스타일 저장
                 Log.d("statusLocked", String.valueOf(statusLocked)); // 결과값
+                Intent intent1 = new Intent(getApplicationContext(), MainWeatherPage.class);
+                startActivity(intent1);//액티비티 띄우기
                 // 환경설정에서 설문지를 바꿀 경우
                 if(m_SettingCheck == true){
                     Log.d("servey", "servey2");

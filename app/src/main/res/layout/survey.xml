@@ -8,21 +8,23 @@
     android:layout_height="match_parent">
 
 
+    <!--    // 성별-->
+
     <TextView
         android:id="@+id/txt_Main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="설문지"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:text="개인 맞춤 설정"
         android:textColor="@color/textcolor"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
-    <!--    // 성별-->
+        app:layout_constraintVertical_bias="0.048" />
+
     <TextView
         android:id="@+id/txt_gender"
         android:layout_width="wrap_content"
@@ -168,7 +170,7 @@
             android:id="@+id/rb_sporty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="스프티 타입"
+            android:text="스포티 타입"
             android:textColor="@color/textcolor"/>
     </RadioGroup>
 

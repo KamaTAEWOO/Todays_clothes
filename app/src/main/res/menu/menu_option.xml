@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/closet_top"
+        android:title="상의">
+    </item>
+    <item android:id="@+id/closet_bottom"
+        android:title="하의">
+    </item>
+    <item android:id="@+id/closet_outer"
+        android:title="아우터">
+    </item>
+</menu>

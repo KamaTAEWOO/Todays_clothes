@@ -41,6 +41,7 @@ import android.widget.TextView;
 import com.example.todayclothes.MainWeatherPage;
 import com.example.todayclothes.R;
 import com.example.todayclothes.MyCodyPage;
+import com.example.todayclothes.MyClosetTop;
 
 public class WeatherClothesPage_man extends AppCompatActivity{
     TextView V_CTemp;
@@ -117,57 +118,57 @@ public class WeatherClothesPage_man extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_clothes_page_man);
 
-        V_CTemp = (TextView) findViewById(R.id.CTemp);
-        V_CHTemp = (TextView) findViewById(R.id.CHTemp);
-        V_CLTemp = (TextView) findViewById(R.id.CLTemp);
+        V_CTemp = findViewById(R.id.CTemp);
+        V_CHTemp = findViewById(R.id.CHTemp);
+        V_CLTemp = findViewById(R.id.CLTemp);
 
-        V_IweatherPage = (ImageButton) findViewById(R.id.btn_weatherMainPage);
-        V_IClothesPage = (ImageButton) findViewById(R.id.btn_ToClothsPage);
-        V_IMyCodyPage = (ImageButton) findViewById(R.id.btn_ToMyCodyPage);
+        V_IweatherPage = findViewById(R.id.btn_weatherMainPage);
+        V_IClothesPage = findViewById(R.id.btn_ToClothsPage);
+        V_IMyCodyPage = findViewById(R.id.btn_ToMyCodyPage);
 
-        V_ITopclothes1 = (ImageView) findViewById(R.id.img_Topclothes1);
-        V_ITopclothes2 = (ImageView) findViewById(R.id.img_Topclothes2);
-        V_ITopclothes3 = (ImageView) findViewById(R.id.img_Topclothes3);
-        V_ITopclothes4 = (ImageView) findViewById(R.id.img_Topclothes4);
-        V_ITopclothes5 = (ImageView) findViewById(R.id.img_Topclothes5);
-        V_ITopclothes6 = (ImageView) findViewById(R.id.img_Topclothes6);
+        V_ITopclothes1 = findViewById(R.id.img_Topclothes1);
+        V_ITopclothes2 = findViewById(R.id.img_Topclothes2);
+        V_ITopclothes3 = findViewById(R.id.img_Topclothes3);
+        V_ITopclothes4 = findViewById(R.id.img_Topclothes4);
+        V_ITopclothes5 = findViewById(R.id.img_Topclothes5);
+        V_ITopclothes6 = findViewById(R.id.img_Topclothes6);
 
-        V_IOuterclothes1 = (ImageView) findViewById(R.id.img_Outerclothes1);
-        V_IOuterclothes2 = (ImageView) findViewById(R.id.img_Outerclothes2);
-        V_IOuterclothes3 = (ImageView) findViewById(R.id.img_Outerclothes3);
-        V_IOuterclothes4 = (ImageView) findViewById(R.id.img_Outerclothes4);
-        V_IOuterclothes5 = (ImageView) findViewById(R.id.img_Outerclothes5);
-        V_IOuterclothes6 = (ImageView) findViewById(R.id.img_Outerclothes6);
+        V_IOuterclothes1 = findViewById(R.id.img_Outerclothes1);
+        V_IOuterclothes2 = findViewById(R.id.img_Outerclothes2);
+        V_IOuterclothes3 = findViewById(R.id.img_Outerclothes3);
+        V_IOuterclothes4 = findViewById(R.id.img_Outerclothes4);
+        V_IOuterclothes5 = findViewById(R.id.img_Outerclothes5);
+        V_IOuterclothes6 = findViewById(R.id.img_Outerclothes6);
 
-        V_IBottomclothes1 = (ImageView) findViewById(R.id.img_Bottomclothes1);
-        V_IBottomclothes2 = (ImageView) findViewById(R.id.img_Bottomclothes2);
-        V_IBottomclothes3 = (ImageView) findViewById(R.id.img_Bottomclothes3);
-        V_IBottomclothes4 = (ImageView) findViewById(R.id.img_Bottomclothes4);
-        V_IBottomclothes5 = (ImageView) findViewById(R.id.img_Bottomclothes5);
-        V_IBottomclothes6 = (ImageView) findViewById(R.id.img_Bottomclothes6);
+        V_IBottomclothes1 = findViewById(R.id.img_Bottomclothes1);
+        V_IBottomclothes2 = findViewById(R.id.img_Bottomclothes2);
+        V_IBottomclothes3 = findViewById(R.id.img_Bottomclothes3);
+        V_IBottomclothes4 = findViewById(R.id.img_Bottomclothes4);
+        V_IBottomclothes5 = findViewById(R.id.img_Bottomclothes5);
+        V_IBottomclothes6 = findViewById(R.id.img_Bottomclothes6);
 
-        V_txtTop1  = (TextView) findViewById(R.id.txt_top1);
-        V_txtTop2 = (TextView) findViewById(R.id.txt_top2);
-        V_txtTop3  = (TextView) findViewById(R.id.txt_top3);
-        V_txtTop4 = (TextView) findViewById(R.id.txt_top4);
-        V_txtTop5  = (TextView) findViewById(R.id.txt_top5);
-        V_txtTop6 = (TextView) findViewById(R.id.txt_top6);
+        V_txtTop1  = findViewById(R.id.txt_top1);
+        V_txtTop2 = findViewById(R.id.txt_top2);
+        V_txtTop3  = findViewById(R.id.txt_top3);
+        V_txtTop4 = findViewById(R.id.txt_top4);
+        V_txtTop5  = findViewById(R.id.txt_top5);
+        V_txtTop6 = findViewById(R.id.txt_top6);
 
-        V_txtOuter1  = (TextView) findViewById(R.id.txt_outer1);
-        V_txtOuter2 = (TextView) findViewById(R.id.txt_outer2);
-        V_txtOuter3  = (TextView) findViewById(R.id.txt_outer3);
-        V_txtOuter4 = (TextView) findViewById(R.id.txt_outer4);
-        V_txtOuter5  = (TextView) findViewById(R.id.txt_outer5);
-        V_txtOuter6 = (TextView) findViewById(R.id.txt_outer6);
+        V_txtOuter1  = findViewById(R.id.txt_outer1);
+        V_txtOuter2 = findViewById(R.id.txt_outer2);
+        V_txtOuter3  = findViewById(R.id.txt_outer3);
+        V_txtOuter4 = findViewById(R.id.txt_outer4);
+        V_txtOuter5  = findViewById(R.id.txt_outer5);
+        V_txtOuter6 = findViewById(R.id.txt_outer6);
 
-        V_txtBottom1  = (TextView) findViewById(R.id.txt_bottom1);
-        V_txtBottom2 = (TextView) findViewById(R.id.txt_bottom2);
-        V_txtBottom3  = (TextView) findViewById(R.id.txt_bottom3);
-        V_txtBottom4 = (TextView) findViewById(R.id.txt_bottom4);
-        V_txtBottom5  = (TextView) findViewById(R.id.txt_bottom5);
-        V_txtBottom6 = (TextView) findViewById(R.id.txt_bottom6);
+        V_txtBottom1  = findViewById(R.id.txt_bottom1);
+        V_txtBottom2 = findViewById(R.id.txt_bottom2);
+        V_txtBottom3  = findViewById(R.id.txt_bottom3);
+        V_txtBottom4 = findViewById(R.id.txt_bottom4);
+        V_txtBottom5  = findViewById(R.id.txt_bottom5);
+        V_txtBottom6 = findViewById(R.id.txt_bottom6);
 
-        V_advice = (TextView) findViewById(R.id.txt_advice); // 조언 문구
+        V_advice = findViewById(R.id.txt_advice); // 조언 문구
 
         Intent intent = getIntent(); /*데이터 수신*/
 
@@ -176,7 +177,7 @@ public class WeatherClothesPage_man extends AppCompatActivity{
         V_CTemp.setText( man_cTemp + "°C");
 
         // 최고 기온
-        if(intent.getExtras().getString("CHighTemp").substring(1,2).equals(".")){
+        if(intent.getExtras().getString("CHighTemp").startsWith(".", 1)){
             high = intent.getExtras().getString("CHighTemp").substring(0,1);
             V_CHTemp.setText(high + "°C");
         }else{
@@ -184,7 +185,7 @@ public class WeatherClothesPage_man extends AppCompatActivity{
             V_CHTemp.setText(high + "°C");
         }
         // 최저 기온
-        if(intent.getExtras().getString("CLowTemp").substring(1,2).equals(".")){
+        if(intent.getExtras().getString("CLowTemp").startsWith(".", 1)){
             Low = intent.getExtras().getString("CLowTemp").substring(0,1);
             V_CLTemp.setText(Low + "°C");
         }else{
@@ -237,8 +238,8 @@ public class WeatherClothesPage_man extends AppCompatActivity{
         V_IClothesPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), MyCodyPage.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), MyClosetTop.class);
+                startActivity(intent);
             }
         });
 

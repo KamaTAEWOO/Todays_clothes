@@ -51,6 +51,7 @@
         app:layout_constraintVertical_bias="0.558" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/maplestory_bold"
@@ -83,39 +84,38 @@
 
     <ImageButton
         android:id="@+id/imgB_pants"
-        android:layout_width="156dp"
-        android:layout_height="153dp"
-        android:background="#fff"
-        android:src="@drawable/plus_96"
+        android:layout_width="158dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
+        android:background="@drawable/buttonplus2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgB_shoes"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgB_hat"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.556" />
 
     <ImageButton
         android:id="@+id/imgB_shoes"
-        android:layout_width="156dp"
-        android:layout_height="153dp"
-        android:background="#fff"
-        android:src="@drawable/plus_96"
+        android:layout_width="158dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
+        android:background="@drawable/buttonplus2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintVertical_bias="0.758" />
 
     <ImageButton
         android:id="@+id/imgB_hat"
-        android:layout_width="156dp"
-        android:layout_height="153dp"
-        android:background="#fff"
-        android:src="@drawable/plus_96"
+        android:layout_width="158dp"
+        android:layout_height="128dp"
         android:scaleType="fitXY"
+        android:background="@drawable/buttonplus2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgB_Accessories1"
         app:layout_constraintHorizontal_bias="0.415"
@@ -125,59 +125,59 @@
 
     <ImageButton
         android:id="@+id/imgB_Accessories1"
-        android:layout_width="156dp"
-        android:layout_height="75dp"
-        android:background="#fff"
-        android:src="@drawable/plus_96"
+        android:layout_width="158dp"
+        android:layout_height="54dp"
+        android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
+        android:background="@drawable/buttonplus2"
         app:layout_constraintBottom_toTopOf="@+id/imgB_Accessories2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.869"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.966" />
+        app:layout_constraintVertical_bias="0.899" />
 
     <ImageButton
         android:id="@+id/imgB_Accessories2"
-        android:layout_width="156dp"
-        android:layout_height="75dp"
-        android:background="#fff"
-        android:src="@drawable/plus_96"
+        android:layout_width="157dp"
+        android:layout_height="55dp"
+        android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
+        android:background="@drawable/buttonplus2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toEndOf="@+id/imgB_hat"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.346" />
+        app:layout_constraintVertical_bias="0.343" />
 
     <ImageButton
         android:id="@+id/imgB_top"
-        android:layout_width="156dp"
-        android:layout_height="153dp"
-        android:background="#fff"
-        android:src="@drawable/plus_96"
+        android:layout_width="158dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
+        android:background="@drawable/buttonplus2"
         app:layout_constraintBottom_toTopOf="@+id/imgB_pants"
         app:layout_constraintEnd_toStartOf="@+id/imgB_outer"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgB_hat"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.54" />
 
     <ImageButton
         android:id="@+id/imgB_outer"
-        android:layout_width="156dp"
-        android:layout_height="153dp"
-        android:background="#fff"
-        android:src="@drawable/plus_96"
+        android:layout_width="158dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
+        android:background="@drawable/buttonplus2"
         app:layout_constraintBottom_toTopOf="@+id/imgB_shoes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
+        app:layout_constraintVertical_bias="0.904" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -233,6 +233,111 @@
             app:backgroundTint="#54362B" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="모자"
+        android:textStyle="bold"
+        android:textColor="#372F2C"
+        android:fontFamily="@font/maplestory_bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_hat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="악세사리"
+        android:textStyle="bold"
+        android:textColor="#372F2C"
+        android:fontFamily="@font/maplestory_bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_hat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maplestory_bold"
+        android:text="악세사리"
+        android:textColor="#372F2C"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_Accessories2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgB_Accessories1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상의"
+        android:textStyle="bold"
+        android:textColor="#372F2C"
+        android:fontFamily="@font/maplestory_bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgB_hat"
+        app:layout_constraintVertical_bias="0.961" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="하의"
+        android:textStyle="bold"
+        android:textColor="#372F2C"
+        android:fontFamily="@font/maplestory_bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_pants"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgB_top"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아우터"
+        android:textStyle="bold"
+        android:textColor="#372F2C"
+        android:fontFamily="@font/maplestory_bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_outer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgB_Accessories2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="신발"
+        android:textStyle="bold"
+        android:textColor="#372F2C"
+        android:fontFamily="@font/maplestory_bold"
+        app:layout_constraintBottom_toTopOf="@+id/imgB_shoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgB_outer"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

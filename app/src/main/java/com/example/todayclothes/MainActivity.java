@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             if(address.equals("주소 미발견")){
                 LocationStart();
             }else{
-                Log.d("address1=", String.valueOf(address)); // 주소가 뜸
+                Log.d("address1=", address); // 주소가 뜸
 
                 String[] result = address.split(" "); // 띄워쓰기마다 토큰 저장
                 try {
@@ -162,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
             if ( check_result ) {
 
                 //위치 값을 가져올 수 있음
-                ;
             }
             else {
                 // 거부한 퍼미션이 있다면 앱을 사용할 수 없는 이유를 설명해주고 앱을 종료합니다.2 가지 경우가 있습니다.
@@ -246,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
             return "주소 미발견";
         }
         Address address = addresses.get(0);
-        return address.getAddressLine(0).toString()+"\n";
+        return address.getAddressLine(0) +"\n";
     }
 
     //여기부터는 GPS 활성화를 위한 메소드들
@@ -382,14 +381,14 @@ public class MainActivity extends AppCompatActivity {
             Log.d("데이터베이스", "지나감11");
             if(location.name2.equals(m_location2)) {
                 Log.d("db_name1", String.valueOf(location));
-                Log.d("db_name1", (String.valueOf(location.x) + ":::" + String.valueOf(location.y)));
+                Log.d("db_name1", (location.x + ":::" + location.y));
                 m_MyLocationX = location.x;
                 m_MyLocationY = location.y;
                 Log.d("데이터베이스", "지나감2");
                 break;
             }else if(location.name3.equals(m_location2)){
                 Log.d("db_name1", String.valueOf(location));
-                Log.d("db_name1", (String.valueOf(location.x) + ":::" + String.valueOf(location.y)));
+                Log.d("db_name1", (location.x + ":::" + location.y));
                 m_MyLocationX = location.x;
                 m_MyLocationY = location.y;
                 Log.d("데이터베이스", "지나감3");
@@ -459,14 +458,14 @@ public class MainActivity extends AppCompatActivity {
             Log.d("데이터베이스", "지나감11");
             if(location.name2.equals(m_location2)) {
                 Log.d("db_name1", String.valueOf(location));
-                Log.d("db_name1", (String.valueOf(location.x) + ":::" + String.valueOf(location.y)));
+                Log.d("db_name1", (location.x + ":::" + location.y));
                 m_MyLocationX = location.x;
                 m_MyLocationY = location.y;
                 Log.d("데이터베이스", "지나감2");
                 break;
             }else if(location.name3.equals(m_location2)){
                 Log.d("db_name1", String.valueOf(location));
-                Log.d("db_name1", (String.valueOf(location.x) + ":::" + String.valueOf(location.y)));
+                Log.d("db_name1", (location.x + ":::" + location.y));
                 m_MyLocationX = location.x;
                 m_MyLocationY = location.y;
                 Log.d("데이터베이스", "지나감3");

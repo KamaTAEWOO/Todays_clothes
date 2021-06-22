@@ -20,9 +20,9 @@ public class StoryImagePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story_image_page);
 
-        IB_back = (ImageButton)findViewById(R.id.IB_back);
+        IB_back = findViewById(R.id.IB_back);
 
-        gridView=(GridView)findViewById(R.id.grid_view);
+        gridView= findViewById(R.id.grid_view);
 
         gridView.setAdapter(new Image_adapter(this));
 

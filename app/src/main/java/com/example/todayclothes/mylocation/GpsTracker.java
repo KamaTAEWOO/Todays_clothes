@@ -52,7 +52,6 @@ public class GpsTracker extends Service implements LocationListener {
                 if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED &&
                         hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
 
-                    ;
                 } else
                     return null;
 

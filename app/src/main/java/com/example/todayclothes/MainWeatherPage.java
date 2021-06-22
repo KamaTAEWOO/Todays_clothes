@@ -36,6 +36,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -193,44 +194,44 @@ public class MainWeatherPage extends AppCompatActivity {
         SharedPreferences sh1 = getSharedPreferences("MyProgressBar", MODE_PRIVATE);
         progressCheck=sh1.getBoolean("progressCheck", false);
 
-        V_myLocation = (TextView)findViewById(R.id.myLocation);
-        V_temp = (TextView)findViewById(R.id.txt_temp); // 메인 현재 기온
-        V_wind =(TextView)findViewById(R.id.txt_wind); // 바람세기
-        V_rain =(TextView)findViewById(R.id.txt_rain); // 강수량
-        V_SKY = (ImageView)findViewById(R.id.img_weather); // 날씨 그림
-        V_oneNextHighTemp = (TextView) findViewById(R.id.txt_next_HighTemp); // 내일 최고 기온
-        V_oneNextLowTemp = (TextView) findViewById(R.id.txt_next_LowTemp); // 내일 최저 기온
-        V_twoNextHighTemp = (TextView) findViewById(R.id.txt_two_next_HighTemp); // 모레 최고 기온
-        V_twoNextLowTemp = (TextView) findViewById(R.id.txt_two_next_LowTemp); // 모레 최저 기온
-        V_time1 = (TextView) findViewById(R.id.Time1); // 시간별
-        V_time2 = (TextView) findViewById(R.id.Time2); // 시간별
-        V_time3 = (TextView) findViewById(R.id.Time3); // 시간별
-        V_time4 = (TextView) findViewById(R.id.Time4); // 시간별
-        V_time5 = (TextView) findViewById(R.id.Time5); // 시간별
-        V_time6 = (TextView) findViewById(R.id.Time6); // 시간별
-        V_time7 = (TextView) findViewById(R.id.Time7); // 시간별
-        V_temp1 = (TextView) findViewById(R.id.Temp1); // 시간별
-        V_temp2 = (TextView) findViewById(R.id.Temp2); // 시간별
-        V_temp3 = (TextView) findViewById(R.id.Temp3); // 시간별
-        V_temp4 = (TextView) findViewById(R.id.Temp4); // 시간별
-        V_temp5 = (TextView) findViewById(R.id.Temp5); // 시간별
-        V_temp6 = (TextView) findViewById(R.id.Temp6); // 시간별
-        V_temp7 = (TextView) findViewById(R.id.Temp7); // 시간별
-        V_temp8 = (TextView) findViewById(R.id.Temp8); // 시간별
-        V_weatherI1 = (ImageView) findViewById(R.id.weatherI1); // 시간별
-        V_weatherI2 = (ImageView) findViewById(R.id.weatherI2); // 시간별
-        V_weatherI3 = (ImageView) findViewById(R.id.weatherI3); // 시간별
-        V_weatherI4 = (ImageView) findViewById(R.id.weatherI4); // 시간별
-        V_weatherI5 = (ImageView) findViewById(R.id.weatherI5); // 시간별
-        V_weatherI6 = (ImageView) findViewById(R.id.weatherI6); // 시간별
-        V_weatherI7 = (ImageView) findViewById(R.id.weatherI7); // 시간별
-        V_weatherI8 = (ImageView) findViewById(R.id.weatherI8); // 시간별
-        V_weatherNext = (ImageView) findViewById(R.id.nextweatherI); // 내일날씨
-        V_weatherTwoNext = (ImageView) findViewById(R.id.TwonextweatherI); // 모레날씨
-        V_to_weatherClothesPage = (ImageButton) findViewById(R.id.btn_ToWeatherClothesPage); // 추천 옷차림 버튼
-        V_to_myCodyPage = (ImageButton) findViewById(R.id.btn_ToMyCodyPage); // 나의 코디 페이지 이동
-        V_to_ClothesPage = (ImageButton) findViewById(R.id.btn_ToClothsPage); // 옷장 페이지 이동
-        V_Setting = (ImageButton) findViewById(R.id.IB_Setting);
+        V_myLocation = findViewById(R.id.myLocation);
+        V_temp = findViewById(R.id.txt_temp); // 메인 현재 기온
+        V_wind = findViewById(R.id.txt_wind); // 바람세기
+        V_rain = findViewById(R.id.txt_rain); // 강수량
+        V_SKY = findViewById(R.id.img_weather); // 날씨 그림
+        V_oneNextHighTemp = findViewById(R.id.txt_next_HighTemp); // 내일 최고 기온
+        V_oneNextLowTemp = findViewById(R.id.txt_next_LowTemp); // 내일 최저 기온
+        V_twoNextHighTemp = findViewById(R.id.txt_two_next_HighTemp); // 모레 최고 기온
+        V_twoNextLowTemp = findViewById(R.id.txt_two_next_LowTemp); // 모레 최저 기온
+        V_time1 = findViewById(R.id.Time1); // 시간별
+        V_time2 = findViewById(R.id.Time2); // 시간별
+        V_time3 = findViewById(R.id.Time3); // 시간별
+        V_time4 = findViewById(R.id.Time4); // 시간별
+        V_time5 = findViewById(R.id.Time5); // 시간별
+        V_time6 = findViewById(R.id.Time6); // 시간별
+        V_time7 = findViewById(R.id.Time7); // 시간별
+        V_temp1 = findViewById(R.id.Temp1); // 시간별
+        V_temp2 = findViewById(R.id.Temp2); // 시간별
+        V_temp3 = findViewById(R.id.Temp3); // 시간별
+        V_temp4 = findViewById(R.id.Temp4); // 시간별
+        V_temp5 = findViewById(R.id.Temp5); // 시간별
+        V_temp6 = findViewById(R.id.Temp6); // 시간별
+        V_temp7 = findViewById(R.id.Temp7); // 시간별
+        V_temp8 = findViewById(R.id.Temp8); // 시간별
+        V_weatherI1 = findViewById(R.id.weatherI1); // 시간별
+        V_weatherI2 = findViewById(R.id.weatherI2); // 시간별
+        V_weatherI3 = findViewById(R.id.weatherI3); // 시간별
+        V_weatherI4 = findViewById(R.id.weatherI4); // 시간별
+        V_weatherI5 = findViewById(R.id.weatherI5); // 시간별
+        V_weatherI6 = findViewById(R.id.weatherI6); // 시간별
+        V_weatherI7 = findViewById(R.id.weatherI7); // 시간별
+        V_weatherI8 = findViewById(R.id.weatherI8); // 시간별
+        V_weatherNext = findViewById(R.id.nextweatherI); // 내일날씨
+        V_weatherTwoNext = findViewById(R.id.TwonextweatherI); // 모레날씨
+        V_to_weatherClothesPage = findViewById(R.id.btn_ToWeatherClothesPage); // 추천 옷차림 버튼
+        V_to_myCodyPage = findViewById(R.id.btn_ToMyCodyPage); // 나의 코디 페이지 이동
+        V_to_ClothesPage = findViewById(R.id.btn_ToClothsPage); // 옷장 페이지 이동
+        V_Setting = findViewById(R.id.IB_Setting);
 
         // 환경 설정 버튼
         registerForContextMenu(V_Setting);
@@ -342,8 +343,8 @@ public class MainWeatherPage extends AppCompatActivity {
         V_to_ClothesPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), MyCodyPage.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), MyClosetTop.class);
+                startActivity(intent);
             }
         });
 
@@ -442,7 +443,7 @@ public class MainWeatherPage extends AppCompatActivity {
         StringBuffer buffer = new StringBuffer(); // 출력될 값들을 한번에 보여주기 위해 사용.
         //Log.d("mbase_data", mbase_data);
         //String queryUrl =  "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?serviceKey=" + key + "&pageNo=1&numOfRows=2550&dataType=XML&base_date=20210525&base_time=0500&nx=91&ny=90";
-        String queryUrl =  "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?serviceKey=" + key + "&pageNo=" + mpageNo + "&numOfRows=" + mnumbverOfRows + "&dataType=" + mdataType + "&base_date=" + mbase_data +"&base_time=" + mbase_time + "&nx=" + String.valueOf(MainActivity.m_MyLocationX) + "&ny=" + String.valueOf(MainActivity.m_MyLocationY);
+        String queryUrl =  "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?serviceKey=" + key + "&pageNo=" + mpageNo + "&numOfRows=" + mnumbverOfRows + "&dataType=" + mdataType + "&base_date=" + mbase_data +"&base_time=" + mbase_time + "&nx=" + MainActivity.m_MyLocationX + "&ny=" + MainActivity.m_MyLocationY;
         Log.d("queryUrl", queryUrl);
         try
         {
@@ -452,7 +453,7 @@ public class MainWeatherPage extends AppCompatActivity {
 
             XmlPullParserFactory factory= XmlPullParserFactory.newInstance();
             XmlPullParser xpp= factory.newPullParser();
-            xpp.setInput( new InputStreamReader(is, "UTF-8") ); //inputstream 으로부터 xml 입력받기
+            xpp.setInput( new InputStreamReader(is, StandardCharsets.UTF_8) ); //inputstream 으로부터 xml 입력받기
 
             String tag;
 
@@ -873,7 +874,7 @@ public class MainWeatherPage extends AppCompatActivity {
     {
         Log.d("nextWeatherData()", "들어옴");
         // String 자르기...
-        if(m_highTemperlist.get(2).toString().substring(1,2).equals(".")){
+        if(m_highTemperlist.get(2).toString().startsWith(".", 1)){
             String high1 = m_highTemperlist.get(2).toString().substring(0,1) + "°C";
             V_oneNextHighTemp.setText(high1);
         }else{
@@ -881,7 +882,7 @@ public class MainWeatherPage extends AppCompatActivity {
             V_oneNextHighTemp.setText(high1);
         }
 
-        if(m_lowTemperlist.get(1).toString().substring(1,2).equals(".")){
+        if(m_lowTemperlist.get(1).toString().startsWith(".", 1)){
             String low1 = m_lowTemperlist.get(1).toString().substring(0,1) + "°C";
             V_oneNextLowTemp.setText(low1);
         }else{
@@ -889,7 +890,7 @@ public class MainWeatherPage extends AppCompatActivity {
             V_oneNextLowTemp.setText(low1);
         }
 
-        if(m_highTemperlist.get(3).toString().substring(1,2).equals(".")){
+        if(m_highTemperlist.get(3).toString().startsWith(".", 1)){
             String high2 = m_highTemperlist.get(3).toString().substring(0,1) + "°C";
             V_twoNextHighTemp.setText(high2);
         }else{
@@ -897,7 +898,7 @@ public class MainWeatherPage extends AppCompatActivity {
             V_twoNextHighTemp.setText(high2);
         }
 
-        if(m_lowTemperlist.get(2).toString().substring(1,2).equals(".")){
+        if(m_lowTemperlist.get(2).toString().startsWith(".", 1)){
             String low2 = m_lowTemperlist.get(2).toString().substring(0,1) + "°C";
             V_twoNextLowTemp.setText(low2);
         }else{
@@ -979,7 +980,7 @@ public class MainWeatherPage extends AppCompatActivity {
                     return c;
             }
         }else{
-            Log.d("number", String.valueOf(number) + "else");
+            Log.d("number", number + "else");
             switch (m_mt_RainList.get(number).toString()){
                 case "0":
                 case "1":
@@ -1117,7 +1118,7 @@ public class MainWeatherPage extends AppCompatActivity {
         WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
         params.width = RadioGroup.LayoutParams.MATCH_PARENT;
         params.height = RadioGroup.LayoutParams.MATCH_PARENT;
-        dialog.getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
+        dialog.getWindow().setAttributes(params);
         dialog.show();
     }
 }

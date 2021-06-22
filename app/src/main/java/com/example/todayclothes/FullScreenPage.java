@@ -37,7 +37,7 @@ public class FullScreenPage extends AppCompatActivity {
         Intent i = getIntent();
         position = i.getExtras().getInt("id");
         Log.d("position", String.valueOf(position));
-        imageView.setImageBitmap(si.image_adapter.ma.MainImageArray.get(position));
+        imageView.setImageBitmap(MyCodyPage.MainImageArray.get(position));
 
         // 환경 설정 버튼
         registerForContextMenu(IBremove);
@@ -76,10 +76,10 @@ public class FullScreenPage extends AppCompatActivity {
         editor.remove("StringImage" + position);
         editor.commit();
 
-        si.image_adapter.ma.MainImageArray.remove(position);
+        MyCodyPage.MainImageArray.remove(position);
 
         // 선택 항목 초기화
-        si.gridView.setItemChecked(-1, true);
+        StoryImagePage.gridView.setItemChecked(-1, true);
 
         // Grid list 반영
         mGridAdapter.notifyDataSetChanged();

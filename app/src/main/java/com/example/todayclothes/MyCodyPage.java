@@ -86,7 +86,7 @@ public class MyCodyPage extends MainWeatherPage implements AdapterView.OnItemSel
 
 
     // 캡처부분 및 옷장
-    private AppCompatActivity activity = MyCodyPage.this;
+    private final AppCompatActivity activity = MyCodyPage.this;
     private Bitmap bitmap;
     public ArrayList<String> StringArray = new ArrayList<String>(); // 앱을 종료하기 전에 앨범에 있던 사진들을 담는 곳
     static public ArrayList<Bitmap> MainImageArray = new ArrayList<Bitmap>(); // 최종만 넣어서 돌리기. 앱을 종료하기 전에 앨범 + 스크린샷
@@ -101,24 +101,24 @@ public class MyCodyPage extends MainWeatherPage implements AdapterView.OnItemSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cody_page);
 
-        btn_ToMainWeatherPage = (ImageButton) findViewById(R.id.btn_ToMainWeatherPage);
-        btn_ToWeatherClothesPage = (ImageButton) findViewById(R.id.btn_ToWeatherClothesPage);
-        btn_ToClothesPage = (ImageButton) findViewById(R.id.btn_ToClothesPage);
+        btn_ToMainWeatherPage = findViewById(R.id.btn_ToMainWeatherPage);
+        btn_ToWeatherClothesPage = findViewById(R.id.btn_ToWeatherClothesPage);
+        btn_ToClothesPage = findViewById(R.id.btn_ToClothesPage);
 
         // 이미지 버튼 사용
-        IB_m_pants = (ImageButton) findViewById(R.id.imgB_pants);
-        IB_m_shoes= (ImageButton) findViewById(R.id.imgB_shoes);
-        IB_m_hat= (ImageButton) findViewById(R.id.imgB_hat);
-        IB_m_accessories1= (ImageButton) findViewById(R.id.imgB_Accessories1);
-        IB_m_accessories2= (ImageButton) findViewById(R.id.imgB_Accessories2);
-        IB_m_top= (ImageButton) findViewById(R.id.imgB_top);
-        IB_m_outer= (ImageButton) findViewById(R.id.imgB_outer);
+        IB_m_pants = findViewById(R.id.imgB_pants);
+        IB_m_shoes= findViewById(R.id.imgB_shoes);
+        IB_m_hat= findViewById(R.id.imgB_hat);
+        IB_m_accessories1= findViewById(R.id.imgB_Accessories1);
+        IB_m_accessories2= findViewById(R.id.imgB_Accessories2);
+        IB_m_top= findViewById(R.id.imgB_top);
+        IB_m_outer= findViewById(R.id.imgB_outer);
         //V_view = (TextView) findViewById(R.id.txt_view);
-        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        Spinner spin = findViewById(R.id.spinner);
         // 캡처버튼
-        btn_m_save = (ImageButton) findViewById(R.id.btn_save);
-        btn_m_codyClothes = (ImageButton) findViewById(R.id.btn_cody_clothes);
-        container = (ConstraintLayout) findViewById(R.id.linear);
+        btn_m_save = findViewById(R.id.btn_save);
+        btn_m_codyClothes = findViewById(R.id.btn_cody_clothes);
+        container = findViewById(R.id.linear);
 
         FileLoad(); // 재실행시 파일 로드
 
@@ -257,8 +257,8 @@ public class MyCodyPage extends MainWeatherPage implements AdapterView.OnItemSel
         btn_ToClothesPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent1 = new Intent(getApplicationContext(), StoryImagePage.class);
-//                startActivity(intent1);
+                Intent intent1 = new Intent(getApplicationContext(), MyClosetTop.class);
+                startActivity(intent1);
             }
         });
 
@@ -535,7 +535,7 @@ public class MyCodyPage extends MainWeatherPage implements AdapterView.OnItemSel
         }
         // 악세사리2
         if(img_accessories2.equals("accessories2.png")){
-            String imgpath = getCacheDir() + "/" + img_shoes;
+            String imgpath = getCacheDir() + "/" + img_accessories2;
             Bitmap bm = BitmapFactory.decodeFile(imgpath);
             IB_m_accessories2.setImageBitmap(bm);
         }

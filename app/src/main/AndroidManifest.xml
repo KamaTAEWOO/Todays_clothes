@@ -10,14 +10,17 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TodayClothes"
         android:usesCleartextTraffic="true">
-        <activity android:name=".FullScreenPage"></activity>
+        <activity android:name=".MyClosetBottom"></activity>
+        <activity android:name=".MyClosetOuter" />
+        <activity android:name=".MyClosetTop" />
+        <activity android:name=".FullScreenPage" />
         <activity android:name=".StoryImagePage" />
         <activity android:name=".MyCodyPage" />
         <activity android:name=".clothesPage.WeatherClothesPage_woman" />

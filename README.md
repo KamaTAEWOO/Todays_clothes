@@ -1,9 +1,9 @@
 ## Today's Clothes
 
-### 개발 기간: 2021.03 ~ 2021.06
-### 개발 언어: Java
-### 개발 프로그램: Android Studio
-### 개발 계획 일정
+### - 개발 기간: 2021.03 ~ 2021.06
+### - 개발 언어: Java
+### - 개발 프로그램: Android Studio
+### - 개발 계획 일정
 ![image](https://user-images.githubusercontent.com/48404941/160640457-c2d23234-7471-48bc-89de-a79c392d842a.png)
 
 
